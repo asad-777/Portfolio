@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .star {
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+
+      #stars-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .content-section {
+        backdrop-filter: blur(4px);
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+        color: white;
+      }
+
+      .hover-underline-animation::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 1px;
+        bottom: -4px;
+        left: 0;
+        background-color: white;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+
+      .hover-underline-animation:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    </style>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-black min-h-screen text-white">
+    <div id="stars-container"></div>
+
+    <!-- Navigation -->
+    <nav
+      class="fixed border-b-2 border-white w-full p-4 content-section bg-black"
+      style="border-radius: 200px"
+    >
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="space-x-[10%] w-full flex justify-center">
+          <!-- About Me Link -->
+          <a
+            href="#home"
+            class="hover-underline-animation lg:font-bold lg:text-xl transition-colors lg:px-2 flex items-center"
+          >
+            <i class="fas fa-user mr-2 lg:block hidden"></i>
+            About
+          </a>
+          <!-- Other Link -->
+          <a
+            href="#other"
+            class="hover-underline-animation lg:font-bold lg:text-xl transition-colors lg:px-2 flex items-center"
+          >
+            <i class="fas fa-envelope lg:block hidden mr-2"></i>
+            Contact
+          </a>
+          <!-- Projects Link -->
+          <a
+            href="#projects"
+            class="hover-underline-animation lg:font-bold lg:text-xl transition-colors lg:px-2 flex items-center"
+          >
+            <i class="fas fa-briefcase lg:block hidden mr-2"></i>
+            Projects
+          </a>
+          <!-- Education Link -->
+          <a
+            href="#education"
+            class="hover-underline-animation lg:font-bold lg:text-xl transition-colors lg:px-2 flex items-center"
+          >
+            <i class="fas fa-graduation-cap lg:block hidden mr-2"></i>
+            Education
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 pt-24 overflow-y-auto"></main>
+
+    <nav
+      class="fixed bottom-0 border-t-2 border-white w-full p-4 content-section bg-black"
+      style="border-radius: 200px"
+    >
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="space-x-[10%] w-full flex justify-center">
+          <!-- Instagram Link -->
+          <a
+            href="https://www.instagram.com/yourusername"
+            target="_blank"
+            class="hover-underline-animation lg:font-bold lg:text-xl transition-colors lg:px-2 flex items-center"
+          >
+            <i class="fab fa-instagram mr-2"></i>
+            <span class="hidden lg:block">Instagram</span>
+          </a>
+          <!-- Twitter Link -->
+          <a
+            href="https://twitter.com/yourusername"
+            target="_blank"
+            class="hover-underline-animation lg:font-bold lg:text-xl transition-colors lg:px-2 flex items-center"
+          >
+            <i class="fab fa-twitter mr-2"></i>
+            <span class="hidden lg:block">Twitter</span>
+          </a>
+          <!-- LinkedIn Link -->
+          <a
+            href="https://www.linkedin.com/in/yourusername"
+            target="_blank"
+            class="hover-underline-animation lg:font-bold lg:text-xl transition-colors lg:px-2 flex items-center"
+          >
+            <i class="fab fa-linkedin mr-2"></i>
+            <span class="hidden lg:block">LinkedIn</span>
+          </a>
+          <!-- GitHub Link -->
+          <a
+            href="https://github.com/yourusername"
+            target="_blank"
+            class="hover-underline-animation lg:font-bold lg:text-xl transition-colors lg:px-2 flex items-center"
+          >
+            <i class="fab fa-github mr-2"></i>
+            <span class="hidden lg:block">GitHub</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <script>
+      // Star creation and animation
+      const starsContainer = document.getElementById("stars-container");
+      const numberOfStars = 200;
+      const stars = [];
+
+      function createStar() {
+        const star = document.createElement("div");
+        star.className = "star";
+
+        // Random position
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight;
+
+        // Random size
+        const size = Math.random() * 3;
+
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${x}px`;
+        star.style.top = `${y}px`;
+
+        // Add to container and store reference
+        starsContainer.appendChild(star);
+        stars.push({
+          element: star,
+          x,
+          y,
+          speed: Math.random() * 0.5 + 0.1,
+        });
+      }
+
+      // Create initial stars
+      for (let i = 0; i < numberOfStars; i++) {
+        createStar();
+      }
+
+      // Animate stars
+      function animateStars() {
+        stars.forEach((star) => {
+          star.x += star.speed;
+
+          // Reset star position when it goes off screen
+          if (star.x > window.innerWidth) {
+            star.x = -5;
+          }
+
+          star.element.style.left = `${star.x}px`;
+        });
+
+        requestAnimationFrame(animateStars);
+      }
+
+      // Start animation
+      animateStars();
+
+      // Handle window resize
+      window.addEventListener("resize", () => {
+        stars.forEach((star) => {
+          if (star.x > window.innerWidth) {
+            star.x = Math.random() * window.innerWidth;
+          }
+          if (star.y > window.innerHeight) {
+            star.y = Math.random() * window.innerHeight;
+          }
+        });
+      });
+
+      // Smooth scroll for navigation
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
