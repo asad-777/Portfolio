@@ -4,8 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Interactive Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-in {
+        animation: fade-in 1s ease-out forwards;
+      }
+
+      .content-section {
+        background: transparent;
+      }
+
       .star {
         position: absolute;
         background: white;
@@ -104,7 +125,74 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-4 pt-24 overflow-y-auto"></main>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4">
+      <!-- Intro Section -->
+      <section class="min-h-screen flex items-center justify-center">
+        <div
+          class="p-8 md:p-12 bg-[rgba(120,120,120,0.2)] rounded-xl max-w-4xl w-full text-center md:text-left"
+        >
+          <!-- Greeting Section -->
+          <div class="space-y-3 mb-8">
+            <h1 class="text-5xl md:text-6xl" style="font-weight: 900">
+              <span
+                class="bg-clip-text animate-fade-in text-transparent bg-white"
+              >
+                Muhammad Asad Amir
+              </span>
+            </h1>
+          </div>
+
+          <!-- Role Section -->
+          <div class="space-y-4 mb-8">
+            <div
+              class="flex flex-col md:flex-row gap-4 md:gap-8 text-lg md:text-xl justify-center md:justify-start"
+            >
+              <div
+                class="flex items-center justify-center md:justify-start space-x-3"
+              >
+                <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                <p class="font-medium animate-fade-in">
+                  Python Full-Stack Web Dev
+                </p>
+              </div>
+              <div
+                class="flex items-center justify-center md:justify-start space-x-3"
+              >
+                <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                <p class="font-medium animate-fade-in">
+                  Generative & Agentic Ai Specialist
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="flex justify-center items-center min-h-screen">
+          <!-- Card Container -->
+          <div class="grid grid-cols-2 gap-8">
+            <!-- Card 1 -->
+            <div
+              class="card w-64 h-80 bg-[rgba(120,120,120,0.3)] rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105 border-2 border-transparent hover:border-gradient-to-r from-purple-500 to-cyan-500"
+              data-tilt
+            >
+              <div class="flex flex-col justify-center items-center h-full">
+                <div
+                  class="w-20 h-20 mb-8 scale-[5] flex justify-center items-center"
+                >
+                  <i class="fab fa-instagram"></i>
+                </div>
+                <h3 class="text-white pt-8 text-xl" style="font-weight: 900">
+                  Web Developer
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <nav
       class="fixed bottom-0 border-t-2 border-white w-full p-4 content-section bg-black"
@@ -152,6 +240,10 @@
       </div>
     </nav>
     <script>
+      VanillaTilt.init(document.querySelectorAll(".card"), {
+        max: 20,
+        speed: 400,
+      });
       // Star creation and animation
       const starsContainer = document.getElementById("stars-container");
       const numberOfStars = 200;
