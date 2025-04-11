@@ -1,383 +1,314 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="synthwave">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Interactive Portfolio</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      @keyframes fade-in {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .animate-fade-in {
-        animation: fade-in 1s ease-out forwards;
-      }
-
-      .content-section {
-        background: transparent;
-      }
-
-      .star {
-        position: absolute;
-        background: white;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-      }
-
-      #stars-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: -1;
-      }
-
-      .content-section {
-        backdrop-filter: blur(4px);
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-
-      .hover-underline-animation {
-        display: inline-block;
-        position: relative;
-        color: white;
-      }
-
-      .hover-underline-animation::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 1px;
-        bottom: -4px;
-        left: 0;
-        background-color: white;
-        transform-origin: bottom right;
-        transition: transform 0.25s ease-out;
-      }
-
-      .hover-underline-animation:hover::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-      }
-    </style>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
-  </head>
-  <body class="bg-black min-h-screen text-white">
-    <div id="stars-container"></div>
 
-    <!-- Navigation -->
-    <nav
-      class="fixed border-b-2 border-white w-full p-4 content-section bg-black"
-      style="border-radius: 200px; z-index: 1000"
-    >
-      <div class="container mx-auto flex justify-between items-center">
-        <div class="space-x-[9%] w-full flex justify-center">
-          <!-- About Me Link -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link href="/main.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <!-- navbar -->
+    <div class="fixed top-4 inset-x-0 z-50 px-4 py-2 lg:px-8">
+      <div
+        class="navbar max-w-screen-xl mx-auto bg-base-100/60 backdrop-blur-md border border-base-content/30 rounded-xl shadow px-6 py-3"
+      >
+        <div class="navbar-start">
+          <div class="dropdown ml-[-20px]">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-300 border transform translate-y-2 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            >
+              <li class="p-2">
+                <a class="px-2 py-4 4 nav-link-hover">About</a>
+              </li>
+              <li class="p-2">
+                <a class="px-2 py-4 nav-link-hover">Experience</a>
+              </li>
+              <li class="p-2">
+                <a class="px-2 py-4 nav-link-hover">Projects</a>
+              </li>
+              <li class="p-2">
+                <a class="px-2 py-4 nav-link-hover">Education</a>
+              </li>
+              <li class="p-2">
+                <a class="px-2 py-4 nav-link-hover">Contact Me</a>
+              </li>
+            </ul>
+          </div>
+          <a href="index.html">
+            <img
+              src="/images/Frajkjme 1.png"
+              class="w-10 h-10 rounded-full scale-[2.8] lg:ml-8 hidden lg:block"
+          /></a>
+        </div>
+
+        <img
+          src="/images/Frajkjme 1.png"
+          class="w-10 h-10 rounded-full scale-[3] lg:hidden ml-[-15vw]"
+        />
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li class="px-2 ml-2"><a class="px-4 nav-link-hover">About</a></li>
+            <li class="px-2 ml-2">
+              <a class="px-4 nav-link-hover">Experience</a>
+            </li>
+            <li class="px-2 ml-2">
+              <a class="px-4 nav-link-hover">Projects</a>
+            </li>
+            <li class="px-2 ml-2">
+              <a class="px-4 nav-link-hover">Education</a>
+            </li>
+            <li class="px-2 ml-2">
+              <a class="px-4 nav-link-hover">Contact Me</a>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-end lg:mr-4">
           <a
-            href="#home"
-            class="hover-underline-animation lg:font-bold lg:text-xl transition-colors lg:px-2 flex items-center"
+            class="px-4 py-2 border rounded-xl btn border-neutral transition hover:bg-neutral"
+            >Asad Ai</a
           >
-            <i class="fas fa-user mr-2 lg:block hidden"></i>
-            About
-          </a>
-          <!-- Other Link -->
-          <a
-            href="#other"
-            class="hover-underline-animation lg:font-bold lg:text-xl transition-colors lg:px-2 flex items-center"
-          >
-            <i class="fas fa-envelope lg:block hidden mr-2"></i>
-            Contact
-          </a>
-          <!-- Projects Link -->
-          <a
-            href="#projects"
-            class="hover-underline-animation lg:font-bold lg:text-xl transition-colors lg:px-2 flex items-center"
-          >
-            <i class="fas fa-briefcase lg:block hidden mr-2"></i>
-            Projects
-          </a>
-          <!-- Education Link -->
-          <a
-            href="#education"
-            class="hover-underline-animation lg:font-bold lg:text-xl transition-colors lg:px-2 flex items-center"
-          >
-            <i class="fas fa-graduation-cap lg:block hidden mr-2"></i>
-            Education
-          </a>
         </div>
       </div>
-    </nav>
+    </div>
+    <!-- hero section -->
+    <div class="hero min-h-screen relative bg-base-300 overflow-hidden">
+      <!-- Structured Diagonal Grid Background -->
+      <canvas
+        id="animated-bg"
+        class="absolute inset-0 w-full h-full z-0"
+      ></canvas>
 
-    <!-- Main Content -->
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 overflow-hidden">
-      <!-- Intro Section -->
-      <section class="min-h-screen flex items-center justify-center">
+      <!-- Hero Content (unchanged) -->
+      <div
+        class="hero-content px-4 py-2 flex-col items-center lg:flex-row-reverse relative z-10"
+      >
+        <div class="w-full h-[60px] lg:hidden"></div>
+        <img
+          src="/images/Frame 1.png"
+          class="max-w-sm rounded scale-100 w-full bg-base-300 rounded-full"
+        />
         <div
-          class="p-8 md:p-12 bg-[rgba(120,120,120,0.2)] rounded-xl max-w-4xl w-full text-center md:text-left"
+          class="text-center lg:text-left lg:ml-8 bg-base-300 p-4 border rounded-xl px-8"
         >
-          <!-- Greeting Section -->
-          <div class="space-y-3 mb-8">
-            <h1 class="text-5xl md:text-6xl" style="font-weight: 900">
-              <span
-                class="bg-clip-text text-center animate-fade-in text-transparent bg-white"
-              >
-                Muhammad Asad Amir
-              </span>
-            </h1>
-          </div>
-
-          <!-- Role Section -->
-          <div class="space-y-4 mb-8">
-            <div
-              class="flex flex-col md:flex-row gap-4 md:gap-8 text-lg md:text-xl justify-center md:justify-start"
+          <h1 class="text-4xl sm:text-5xl font-bold">Hi! I’m Muhammad Asad</h1>
+          <p class="py-6 text-sm sm:text-base">
+            Full Stack Developer with expertise in Python, Data Structures &
+            Algorithms, and advanced work in Generative and Agentic AI. I build
+            smart, scalable systems that perform.
+          </p>
+          <div class="w-full flex justify-center">
+            <a
+              class="btn btn-wide border-neutral border-2 hover:bg-base-content hover:text-base-200 transition bg-base-100/50 font-semibold"
             >
-              <div
-                class="flex items-center justify-center md:justify-start space-x-3"
-              >
-                <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                <p class="font-medium animate-fade-in">
-                  Python Full-Stack Web Dev
-                </p>
-              </div>
-              <div
-                class="flex items-center justify-center md:justify-start space-x-3"
-              >
-                <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                <p class="font-medium animate-fade-in">
-                  Generative & Agentic Ai Specialist
-                </p>
-              </div>
-            </div>
+              Explore My Work
+            </a>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
 
-      <section>
-        <div
-          class="w-[80%] border-b-4 ml-[10%] flex justify-center pb-2 text-4xl font-bold border-white"
-        >
-          Skills
-        </div>
-        <div
-          class="flex justify-center items-center py-16 mb-16 overflow-hidden"
-        >
-          <!-- Card Container -->
-          <div class="lg:flex lg:justify-around px-8 grid gap-4">
-            <!-- Card 1 -->
-            <div
-              class="card w-full h-80 px-8 bg-[rgba(120,120,120,0.3)] rounded-xl shadow-lg hover:shadow-2xl hover:border-2 border-white"
-              data-tilt
-            >
-              <div class="flex flex-col justify-center items-center h-full">
-                <div class="mb-12 scale-[6] flex justify-center items-center">
-                  <i class="fab fa-python"></i>
-                </div>
-                <h3
-                  class="text-white pt-8 text-xl text-center"
-                  style="font-weight: 900"
-                >
-                  Python Based <br />Full-Stack Web Dev
-                </h3>
-              </div>
-            </div>
-
-            <div
-              class="card w-full h-80 px-8 bg-[rgba(120,120,120,0.3)] rounded-xl shadow-lg hover:shadow-2xl hover:border-2 border-white"
-              data-tilt
-            >
-              <div class="flex flex-col justify-center items-center h-full">
-                <div class="mb-12 scale-[6] flex justify-center items-center">
-                  <i class="fas fa-robot"></i>
-                </div>
-                <h3
-                  class="text-white pt-8 text-xl text-center"
-                  style="font-weight: 900"
-                >
-                  Generative Ai Specialist
-                </h3>
-              </div>
-            </div>
-
-            <div
-              class="card w-full h-80 px-8 bg-[rgba(120,120,120,0.3)] rounded-xl shadow-lg hover:shadow-2xl hover:border-2 border-white"
-              data-tilt
-            >
-              <div class="flex flex-col justify-center items-center h-full">
-                <div class="mb-12 scale-[6] flex justify-center items-center">
-                  <i class="fas fa-brain"></i>
-                </div>
-                <h3
-                  class="text-white pt-8 text-xl text-center"
-                  style="font-weight: 900"
-                >
-                  Agentic Ai Specialist
-                </h3>
-              </div>
-            </div>
-
-            <div
-              class="card w-full h-80 px-8 bg-[rgba(120,120,120,0.3)] rounded-xl shadow-lg hover:shadow-2xl hover:border-2 border-white"
-              data-tilt
-            >
-              <div class="flex flex-col justify-center items-center h-full">
-                <div class="mb-12 scale-[6] flex justify-center items-center">
-                  <i class="fas fa-code"></i>
-                </div>
-                <h3
-                  class="text-white pt-8 text-xl text-center"
-                  style="font-weight: 900"
-                >
-                  Dsa in Python
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <nav
-      class="fixed bottom-0 border-t-2 border-white w-full p-4 content-section bg-black"
-      style="border-radius: 200px"
+    <!-- links section for social media -->
+    <section
+      class="w-full h-fit bg-base-200 flex justify-center py-8 lg:px-4 px-8"
     >
-      <div class="container mx-auto flex justify-between items-center">
-        <div class="space-x-[10%] w-full flex justify-center">
-          <!-- Instagram Link -->
-          <a
-            href="https://www.instagram.com/yourusername"
-            target="_blank"
-            class="hover-underline-animation lg:font-bold lg:text-xl transition-colors lg:px-2 flex items-center"
-          >
-            <i class="fab fa-instagram mr-2"></i>
-            <span class="hidden lg:block">Instagram</span>
-          </a>
-          <!-- Twitter Link -->
+      <div class="container flex flex-col items-center justify-center">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-8">Socials</h2>
+        <div class="w-full h-10 border-t mb-4"></div>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-4xl"
+        >
+          <!-- github -->
           <a
             href="https://twitter.com/yourusername"
             target="_blank"
-            class="hover-underline-animation lg:font-bold lg:text-xl transition-colors lg:px-2 flex items-center"
+            class="w-full flex items-center justify-center p-4 rounded-lg transition btn p-8 btn-outline text-xl font-bold border border-4 hover:bg-neutral hover:text-neutral-content"
           >
-            <i class="fab fa-twitter mr-2"></i>
-            <span class="hidden lg:block">Twitter</span>
+            <i class="fa-brands fa-github p-2 fa-xl mr-4"></i>
+            <span class="text-lg">asad-777</span>
           </a>
-          <!-- LinkedIn Link -->
+
+          <!-- LinkedIn -->
           <a
-            href="https://www.linkedin.com/in/yourusername"
+            href="https://linkedin.com/in/yourusername"
             target="_blank"
-            class="hover-underline-animation lg:font-bold lg:text-xl transition-colors lg:px-2 flex items-center"
+            class="w-full flex items-center justify-center p-4 rounded-lg transition btn p-8 btn-outline text-xl font-bold border border-4 hover:bg-neutral hover:text-neutral-content"
           >
-            <i class="fab fa-linkedin mr-2"></i>
-            <span class="hidden lg:block">LinkedIn</span>
+            <i class="fa-brands fa-linkedin p-2 fa-xl mr-4"></i>
+            <span class="text-lg"> @_asad_777 </span>
           </a>
-          <!-- GitHub Link -->
+
+          <!-- X (Twitter) -->
           <a
-            href="https://github.com/yourusername"
+            href="https://twitter.com/yourusername"
             target="_blank"
-            class="hover-underline-animation lg:font-bold lg:text-xl transition-colors lg:px-2 flex items-center"
+            class="w-full flex items-center justify-center p-4 rounded-lg transition btn p-8 btn-outline text-xl font-bold border border-4 hover:bg-neutral hover:text-neutral-content"
           >
-            <i class="fab fa-github mr-2"></i>
-            <span class="hidden lg:block">GitHub</span>
+            <i class="fa-brands fa-twitter p-2 fa-xl mr-4"></i>
+            <span class="text-lg"> @_asad_777 </span>
           </a>
+
+          <!-- Gmail -->
+          <a
+            href="mailto:yourname@gmail.com"
+            target="_blank"
+            class="w-full flex items-center justify-center p-4 rounded-lg transition btn p-8 btn-outline text-xl font-bold border border-4 hover:bg-neutral hover:text-neutral-content"
+          >
+            <i class="fa-solid fa-envelope p-2 fa-xl mr-4"></i>
+            <span class="text-lg"> Gmail </span>
+          </a>
+
+          <!-- Add more social media platforms here -->
         </div>
       </div>
-    </nav>
+    </section>
+
+    <!-- Hidden elements to extract theme colors -->
+    <div class="hidden">
+      <span id="color-primary" class="text-accent"></span>
+      <span id="color-accent" class="text-base"></span>
+      <span id="color-base" class="text-info-content"></span>
+    </div>
+
+    <canvas
+      id="animated-bg"
+      class="absolute inset-0 z-0 w-full h-full"
+    ></canvas>
+
     <script>
-      VanillaTilt.init(document.querySelectorAll(".card"), {
-        max: 20,
-        speed: 400,
-      });
-      // Star creation and animation
-      const starsContainer = document.getElementById("stars-container");
-      const numberOfStars = 200;
-      const stars = [];
+      const canvas = document.getElementById("animated-bg");
+      const ctx = canvas.getContext("2d");
 
-      function createStar() {
-        const star = document.createElement("div");
-        star.className = "star";
+      let shapes = [];
+      let shapeColors = {};
 
-        // Random position
-        const x = Math.random() * window.innerWidth;
-        const y = Math.random() * window.innerHeight;
-
-        // Random size
-        const size = Math.random() * 3;
-
-        star.style.width = `${size}px`;
-        star.style.height = `${size}px`;
-        star.style.left = `${x}px`;
-        star.style.top = `${y}px`;
-
-        // Add to container and store reference
-        starsContainer.appendChild(star);
-        stars.push({
-          element: star,
-          x,
-          y,
-          speed: Math.random() * 0.5 + 0.1,
-        });
+      function getThemeColors() {
+        const getColor = (id) =>
+          getComputedStyle(document.getElementById(id)).color;
+        return {
+          cross: getColor("color-primary"),
+          star: getColor("color-accent"),
+          diamond: getColor("color-base"),
+        };
       }
 
-      // Create initial stars
-      for (let i = 0; i < numberOfStars; i++) {
-        createStar();
+      function createGridShapes() {
+        shapes = [];
+        const size = 16;
+        const spacing = 48;
+        const width = canvas.width;
+        const height = canvas.height;
+
+        const cols = Math.ceil(width / spacing) + 1;
+        const rows = Math.ceil(height / spacing) + 1;
+
+        for (let y = 0; y < rows; y++) {
+          for (let x = 0; x < cols; x++) {
+            const offsetX = (y % 2) * (spacing / 2); // diagonal shift
+            const shape = {
+              x: x * spacing + offsetX,
+              y: y * spacing,
+              size: size,
+              rotation: Math.random() * Math.PI,
+              type: ["cross", "star", "diamond"][Math.floor(Math.random() * 3)],
+              direction: Math.random() < 0.5 ? 1 : -1,
+            };
+            shapes.push(shape);
+          }
+        }
       }
 
-      // Animate stars
-      function animateStars() {
-        stars.forEach((star) => {
-          star.x += star.speed;
+      function drawShape(shape) {
+        ctx.save();
+        ctx.translate(shape.x, shape.y);
+        ctx.rotate(shape.rotation);
+        ctx.strokeStyle = shapeColors[shape.type];
+        ctx.lineWidth = 1.2;
 
-          // Reset star position when it goes off screen
-          if (star.x > window.innerWidth) {
-            star.x = -5;
+        const s = shape.size / 2;
+        ctx.beginPath();
+
+        if (shape.type === "cross") {
+          ctx.moveTo(-s, 0);
+          ctx.lineTo(s, 0);
+          ctx.moveTo(0, -s);
+          ctx.lineTo(0, s);
+        } else if (shape.type === "star") {
+          for (let i = 0; i < 5; i++) {
+            const angle = (i * 2 * Math.PI) / 5;
+            const x = Math.cos(angle) * s;
+            const y = Math.sin(angle) * s;
+            ctx.lineTo(x, y);
           }
+          ctx.closePath();
+        } else if (shape.type === "diamond") {
+          ctx.moveTo(0, -s);
+          ctx.lineTo(s, 0);
+          ctx.lineTo(0, s);
+          ctx.lineTo(-s, 0);
+          ctx.closePath();
+        }
 
-          star.element.style.left = `${star.x}px`;
-        });
-
-        requestAnimationFrame(animateStars);
+        ctx.stroke();
+        ctx.restore();
       }
 
-      // Start animation
-      animateStars();
-
-      // Handle window resize
-      window.addEventListener("resize", () => {
-        stars.forEach((star) => {
-          if (star.x > window.innerWidth) {
-            star.x = Math.random() * window.innerWidth;
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        shapes.forEach((shape) => {
+          shape.rotation += 0.01 * shape.direction;
+          if (shape.rotation > Math.PI || shape.rotation < -Math.PI) {
+            shape.direction *= -1;
           }
-          if (star.y > window.innerHeight) {
-            star.y = Math.random() * window.innerHeight;
-          }
+          drawShape(shape);
         });
-      });
+        requestAnimationFrame(animate);
+      }
 
-      // Smooth scroll for navigation
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
-        });
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        shapeColors = getThemeColors();
+        createGridShapes();
+      }
+
+      window.addEventListener("resize", resizeCanvas);
+      window.addEventListener("DOMContentLoaded", () => {
+        resizeCanvas();
+        animate();
       });
     </script>
   </body>
