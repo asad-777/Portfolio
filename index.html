@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="synthwave">
+<html lang="en" data-theme="abyss">
   <head>
+    <link rel="icon" href="/images/Frame 1.png" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
@@ -107,10 +108,7 @@
     <!-- hero section -->
     <div class="hero min-h-screen relative bg-base-300 overflow-hidden">
       <!-- Structured Diagonal Grid Background -->
-      <canvas
-        id="animated-bg"
-        class="absolute inset-0 w-full h-full z-0"
-      ></canvas>
+      <canvas class="animated-bg absolute inset-0 w-full h-full z-0"></canvas>
 
       <!-- Hero Content (unchanged) -->
       <div
@@ -143,7 +141,7 @@
 
     <!-- links section for social media -->
     <section
-      class="w-full h-fit bg-base-200 flex justify-center py-8 lg:px-4 px-8"
+      class="w-full h-fit bg-base-200 flex justify-center py-8 lg:px-4 px-8 pb-16"
     >
       <div class="container flex flex-col items-center justify-center">
         <h2 class="text-2xl sm:text-3xl font-bold mb-8">Socials</h2>
@@ -196,6 +194,89 @@
       </div>
     </section>
 
+    <!-- Overview Section -->
+    <div class="hero min-h-screen relative bg-base-300 overflow-hidden">
+      <!-- Structured Diagonal Grid Background -->
+      <canvas class="animated-bg absolute inset-0 w-full h-full z-0"></canvas>
+
+      <!-- Hero Content -->
+      <div
+        class="hero-content w-full px-4 py-8 relative z-10 grid grid-cols-1 justify-center items-center w-full"
+      >
+        <div class="text-center mb-8">
+          <h2
+            class="font-extrabold text-5xl underline decoration-9 underline-offset-8 text-base-content"
+          >
+            Skill Set
+          </h2>
+        </div>
+
+        <!-- Cards Grid -->
+        <div
+          class="w-full justify-center items-center grid gap-6 lg:grid-cols-4 md:grid-cols-2 grid-cols-1"
+        >
+          <!-- Frontend Card -->
+          <div
+            class="card bg-base-100 border p-6 shadow-md transform transition-transform hover:scale-[1.03] hover:shadow-xl"
+          >
+            <h3 class="font-bold text-xl mb-2 text-primary">Frontend</h3>
+            <ul class="list-disc list-inside text-base-content">
+              <li>HTML, CSS</li>
+              <li>Vanilla JavaScript</li>
+              <li>Tailwind CSS</li>
+              <li>DaisyUI</li>
+            </ul>
+          </div>
+
+          <!-- Backend Card -->
+          <div
+            class="card bg-base-100 border p-6 shadow-md transform transition-transform hover:scale-[1.03] hover:shadow-xl"
+          >
+            <h3 class="font-bold text-xl mb-2 text-primary">Backend</h3>
+            <ul class="list-disc list-inside text-base-content">
+              <li>Python (Full Stack)</li>
+              <li>Django</li>
+              <li>Flask</li>
+              <li>REST APIs</li>
+            </ul>
+          </div>
+
+          <!-- AI & Data Card -->
+          <div
+            class="card bg-base-100 border p-6 shadow-md transform transition-transform hover:scale-[1.03] hover:shadow-xl"
+          >
+            <h3 class="font-bold text-xl mb-2 text-primary">AI & Data</h3>
+            <ul class="list-disc list-inside text-base-content">
+              <li>Generative & Agentic AI</li>
+              <li>Langchain & CrewAi</li>
+              <li>NumPy, Pandas</li>
+              <li>Rag and Tool Calling</li>
+            </ul>
+          </div>
+
+          <!-- Programming Foundations Card -->
+          <div
+            class="card bg-base-100 border p-6 shadow-md transform transition-transform hover:scale-[1.03] hover:shadow-xl"
+          >
+            <h3 class="font-bold text-xl mb-2 text-primary">Programming</h3>
+            <ul class="list-disc list-inside text-base-content">
+              <li>C & C++</li>
+              <li>Data Structures</li>
+              <li>Problem Solving</li>
+              <li>Code Optimization</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- See Projects Button -->
+        <div class="mt-12 text-center">
+          <a href="#projects" class="btn btn-primary px-6 py-2 text-lg">
+            See Projects
+          </a>
+        </div>
+      </div>
+    </div>
+
     <!-- Hidden elements to extract theme colors -->
     <div class="hidden">
       <span id="color-primary" class="text-accent"></span>
@@ -203,17 +284,8 @@
       <span id="color-base" class="text-info-content"></span>
     </div>
 
-    <canvas
-      id="animated-bg"
-      class="absolute inset-0 z-0 w-full h-full"
-    ></canvas>
-
     <script>
-      const canvas = document.getElementById("animated-bg");
-      const ctx = canvas.getContext("2d");
-
-      let shapes = [];
-      let shapeColors = {};
+      const canvases = document.querySelectorAll("canvas.animated-bg");
 
       function getThemeColors() {
         const getColor = (id) =>
@@ -225,90 +297,98 @@
         };
       }
 
-      function createGridShapes() {
-        shapes = [];
-        const size = 16;
-        const spacing = 48;
-        const width = canvas.width;
-        const height = canvas.height;
+      canvases.forEach((canvas) => {
+        const ctx = canvas.getContext("2d");
+        let shapes = [];
+        let shapeColors = {};
 
-        const cols = Math.ceil(width / spacing) + 1;
-        const rows = Math.ceil(height / spacing) + 1;
+        function createGridShapes() {
+          shapes = [];
+          const size = 16;
+          const spacing = 48;
+          const width = canvas.width;
+          const height = canvas.height;
 
-        for (let y = 0; y < rows; y++) {
-          for (let x = 0; x < cols; x++) {
-            const offsetX = (y % 2) * (spacing / 2); // diagonal shift
-            const shape = {
-              x: x * spacing + offsetX,
-              y: y * spacing,
-              size: size,
-              rotation: Math.random() * Math.PI,
-              type: ["cross", "star", "diamond"][Math.floor(Math.random() * 3)],
-              direction: Math.random() < 0.5 ? 1 : -1,
-            };
-            shapes.push(shape);
+          const cols = Math.ceil(width / spacing) + 1;
+          const rows = Math.ceil(height / spacing) + 1;
+
+          for (let y = 0; y < rows; y++) {
+            for (let x = 0; x < cols; x++) {
+              const offsetX = (y % 2) * (spacing / 2);
+              const shape = {
+                x: x * spacing + offsetX,
+                y: y * spacing,
+                size: size,
+                rotation: Math.random() * Math.PI,
+                type: ["cross", "star", "diamond"][
+                  Math.floor(Math.random() * 3)
+                ],
+                direction: Math.random() < 0.5 ? 1 : -1,
+              };
+              shapes.push(shape);
+            }
           }
         }
-      }
 
-      function drawShape(shape) {
-        ctx.save();
-        ctx.translate(shape.x, shape.y);
-        ctx.rotate(shape.rotation);
-        ctx.strokeStyle = shapeColors[shape.type];
-        ctx.lineWidth = 1.2;
+        function drawShape(shape) {
+          ctx.save();
+          ctx.translate(shape.x, shape.y);
+          ctx.rotate(shape.rotation);
+          ctx.strokeStyle = shapeColors[shape.type];
+          ctx.lineWidth = 1.2;
 
-        const s = shape.size / 2;
-        ctx.beginPath();
+          const s = shape.size / 2;
+          ctx.beginPath();
 
-        if (shape.type === "cross") {
-          ctx.moveTo(-s, 0);
-          ctx.lineTo(s, 0);
-          ctx.moveTo(0, -s);
-          ctx.lineTo(0, s);
-        } else if (shape.type === "star") {
-          for (let i = 0; i < 5; i++) {
-            const angle = (i * 2 * Math.PI) / 5;
-            const x = Math.cos(angle) * s;
-            const y = Math.sin(angle) * s;
-            ctx.lineTo(x, y);
+          if (shape.type === "cross") {
+            ctx.moveTo(-s, 0);
+            ctx.lineTo(s, 0);
+            ctx.moveTo(0, -s);
+            ctx.lineTo(0, s);
+          } else if (shape.type === "star") {
+            for (let i = 0; i < 5; i++) {
+              const angle = (i * 2 * Math.PI) / 5;
+              const x = Math.cos(angle) * s;
+              const y = Math.sin(angle) * s;
+              ctx.lineTo(x, y);
+            }
+            ctx.closePath();
+          } else if (shape.type === "diamond") {
+            ctx.moveTo(0, -s);
+            ctx.lineTo(s, 0);
+            ctx.lineTo(0, s);
+            ctx.lineTo(-s, 0);
+            ctx.closePath();
           }
-          ctx.closePath();
-        } else if (shape.type === "diamond") {
-          ctx.moveTo(0, -s);
-          ctx.lineTo(s, 0);
-          ctx.lineTo(0, s);
-          ctx.lineTo(-s, 0);
-          ctx.closePath();
+
+          ctx.stroke();
+          ctx.restore();
         }
 
-        ctx.stroke();
-        ctx.restore();
-      }
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          shapes.forEach((shape) => {
+            shape.rotation += 0.01 * shape.direction;
+            if (shape.rotation > Math.PI || shape.rotation < -Math.PI) {
+              shape.direction *= -1;
+            }
+            drawShape(shape);
+          });
+          requestAnimationFrame(animate);
+        }
 
-      function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        shapes.forEach((shape) => {
-          shape.rotation += 0.01 * shape.direction;
-          if (shape.rotation > Math.PI || shape.rotation < -Math.PI) {
-            shape.direction *= -1;
-          }
-          drawShape(shape);
+        function resizeCanvas() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+          shapeColors = getThemeColors();
+          createGridShapes();
+        }
+
+        window.addEventListener("resize", resizeCanvas);
+        window.addEventListener("DOMContentLoaded", () => {
+          resizeCanvas();
+          animate();
         });
-        requestAnimationFrame(animate);
-      }
-
-      function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        shapeColors = getThemeColors();
-        createGridShapes();
-      }
-
-      window.addEventListener("resize", resizeCanvas);
-      window.addEventListener("DOMContentLoaded", () => {
-        resizeCanvas();
-        animate();
       });
     </script>
   </body>
