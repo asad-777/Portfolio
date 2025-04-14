@@ -62,10 +62,7 @@
                 <a class="px-2 py-4 nav-link-hover">Projects</a>
               </li>
               <li class="p-2">
-                <a class="px-2 py-4 nav-link-hover">Education</a>
-              </li>
-              <li class="p-2">
-                <a class="px-2 py-4 nav-link-hover">Contact Me</a>
+                <a class="px-2 py-4 nav-link-hover">Contact</a>
               </li>
             </ul>
           </div>
@@ -90,18 +87,15 @@
               <a class="px-4 nav-link-hover">Projects</a>
             </li>
             <li class="px-2 ml-2">
-              <a class="px-4 nav-link-hover">Education</a>
-            </li>
-            <li class="px-2 ml-2">
-              <a class="px-4 nav-link-hover">Contact Me</a>
+              <a class="px-4 nav-link-hover">Contact</a>
             </li>
           </ul>
         </div>
         <div class="navbar-end lg:mr-4">
           <a
             class="px-4 py-2 border rounded-xl btn border-neutral transition hover:bg-neutral"
-            >Asad Ai</a
-          >
+            ><span class="nav-link-hover">Lets Connect</span>
+          </a>
         </div>
       </div>
     </div>
@@ -132,7 +126,7 @@
             <a
               class="btn btn-wide border-neutral border-2 hover:bg-base-content hover:text-base-200 transition bg-base-100/50 font-semibold"
             >
-              Explore My Work
+              <i class="fa-solid fa-download mr-2 fa-lg"></i> Download Resume
             </a>
           </div>
         </div>
@@ -144,7 +138,7 @@
       class="w-full h-fit bg-base-200 flex justify-center py-8 lg:px-4 px-8 pb-16"
     >
       <div class="container flex flex-col items-center justify-center">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-8">Socials</h2>
+        <h2 class="text-5xl sm:text-5xl font-bold mb-8">Socials</h2>
         <div class="w-full h-10 border-t mb-4"></div>
         <div
           class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-4xl"
@@ -207,13 +201,13 @@
           <h2
             class="font-extrabold text-5xl underline decoration-9 underline-offset-8 text-base-content"
           >
-            Skill Set
+            <span class="px-4 py-2 bg-base-300 pb-4 rounded-xl">Skill Set</span>
           </h2>
         </div>
 
         <!-- Cards Grid -->
         <div
-          class="w-full justify-center items-center grid gap-6 lg:grid-cols-4 md:grid-cols-2 grid-cols-1"
+          class="w-full lg:px-12 px-8 justify-center items-center grid gap-6 lg:grid-cols-4 md:grid-cols-2 grid-cols-1"
         >
           <!-- Frontend Card -->
           <div
@@ -247,9 +241,9 @@
           >
             <h3 class="font-bold text-xl mb-2 text-primary">AI & Data</h3>
             <ul class="list-disc list-inside text-base-content">
-              <li>Generative & Agentic AI</li>
+              <li>Generative Ai</li>
               <li>Langchain & CrewAi</li>
-              <li>NumPy, Pandas</li>
+              <li>Agentic Ai</li>
               <li>Rag and Tool Calling</li>
             </ul>
           </div>
@@ -267,15 +261,467 @@
             </ul>
           </div>
         </div>
+      </div>
+    </div>
 
-        <!-- See Projects Button -->
-        <div class="mt-12 text-center">
-          <a href="#projects" class="btn btn-primary px-6 py-2 text-lg">
-            See Projects
-          </a>
+    <!-- Projects Section -->
+    <div class="min-h-screen relative bg-base-200 overflow-hidden px-4 lg:px-8">
+      <div
+        class="w-full py-4 mt-8 text-center font-extrabold text-5xl underline underline-offset-4"
+      >
+        Projects
+      </div>
+      <div class="w-full">
+        <div
+          class="w-full mt-8 grid grid-cols-1 lg:grid-cols-2 gap-4 lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1"
+        >
+          <div class="w-full items-center flex justify-end h-full py-2 lg:px-8">
+            <div class="relative lg:w-2/3 w-full">
+              <i
+                class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
+              ></i>
+              <input
+                id="project-search"
+                class="w-full p-2 pl-10 pr-4 rounded-lg bg-base-100/60 border-none focus:outline-none focus:ring-2 focus:ring-primary"
+                type="text"
+                placeholder="Search Projects"
+              />
+            </div>
+          </div>
+          <div class="w-full lg:ml-8 h-full py-2">
+            <ul
+              id="filter-buttons"
+              class="flex flex-wrap justify-start items-center gap-2"
+            >
+              <li
+                data-filter="all"
+                class="btn px-4 border border-base-content border-2 rounded-lg hover:bg-base-content hover:text-base-200 font-bold text-[1em] text-base-content active"
+              >
+                All
+              </li>
+              <li
+                data-filter="frontend"
+                class="btn px-4 border border-base-content border-2 rounded-lg hover:bg-base-content hover:text-base-200 font-bold text-[1em] text-base-content"
+              >
+                FrontEnd
+              </li>
+              <li
+                data-filter="backend"
+                class="btn px-4 border border-base-content border-2 rounded-lg hover:bg-base-content hover:text-base-200 font-bold text-[1em] text-base-content"
+              >
+                BackEnd
+              </li>
+              <li
+                data-filter="aiml"
+                class="btn px-4 border border-base-content border-2 rounded-lg hover:bg-base-content hover:text-base-200 font-bold text-[1em] text-base-content"
+              >
+                AI & ML
+              </li>
+              <li
+                data-filter="opensource"
+                class="btn px-4 border border-base-content border-2 rounded-lg hover:bg-base-content hover:text-base-200 font-bold text-[1em] text-base-content"
+              >
+                Open Source
+              </li>
+              <li
+                data-filter="fullstack"
+                class="btn px-4 border border-base-content border-2 rounded-lg hover:bg-base-content hover:text-base-200 font-bold text-[1em] text-base-content"
+              >
+                Full Stack
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          id="projects-container"
+          class="h-full w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center items-start gap-6 mt-4 px-4 lg:px-8 py-4"
+        >
+          <!-- Project 1: AI-Powered RAG System -->
+          <div
+            class="project-card card group bg-base-100 border shadow-xl transform transition-transform hover:scale-105 hover:shadow-xl overflow-hidden relative"
+            data-categories="aiml backend"
+          >
+            <figure class="h-48 bg-base-300 relative">
+              <img
+                src="/api/placeholder/400/320"
+                class="object-cover w-full h-full"
+                alt="RAG System"
+              />
+              <!-- Hover Overlay Actions -->
+              <div
+                class="absolute inset-0 bg-black/50 flex justify-center items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <a
+                  href="#"
+                  class="btn btn-sm btn-outline border-white text-white hover:bg-primary hover:border-primary"
+                >
+                  <i class="fa-solid fa-code mr-2"></i>View Code
+                </a>
+                <a
+                  href="#"
+                  class="btn btn-sm btn-outline border-white text-white hover:bg-primary hover:border-primary"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i
+                  >Live Demo
+                </a>
+              </div>
+            </figure>
+
+            <div class="card-body">
+              <h3 class="card-title text-xl font-bold text-primary">
+                AI-Powered RAG System
+              </h3>
+              <p class="text-base-content mb-4">
+                Retrieval-Augmented Generation system that enhances AI responses
+                with contextually relevant information from custom knowledge
+                bases.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="badge badge-soft badge-success">Python</span>
+                <span class="badge badge-soft badge-success">Vector DB</span>
+                <span class="badge badge-soft badge-success"
+                  >LLM Integration</span
+                >
+                <span class="badge badge-soft badge-success">REST API</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: E-Commerce Platform -->
+          <div
+            class="project-card card group bg-base-100 border shadow-xl transform transition-transform hover:scale-105 hover:shadow-xl overflow-hidden relative"
+            data-categories="fullstack frontend"
+          >
+            <figure class="h-48 bg-base-300 relative">
+              <img
+                src="/api/placeholder/400/320"
+                class="object-cover w-full h-full"
+                alt="E-Commerce Platform"
+              />
+              <div
+                class="absolute inset-0 bg-black/50 flex justify-center items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <a
+                  href="#"
+                  class="btn btn-sm btn-outline border-white text-white hover:bg-primary hover:border-primary"
+                >
+                  <i class="fa-solid fa-code mr-2"></i>View Code
+                </a>
+                <a
+                  href="#"
+                  class="btn btn-sm btn-outline border-white text-white hover:bg-primary hover:border-primary"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i
+                  >Live Demo
+                </a>
+              </div>
+            </figure>
+
+            <div class="card-body">
+              <h3 class="card-title text-xl font-bold text-primary">
+                Modern E-Commerce Platform
+              </h3>
+              <p class="text-base-content mb-4">
+                Responsive e-commerce platform with customer reviews, payment
+                processing integration, and inventory management system.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="badge badge-soft badge-success">React</span>
+                <span class="badge badge-soft badge-success">Node.js</span>
+                <span class="badge badge-soft badge-success">MongoDB</span>
+                <span class="badge badge-soft badge-success">Stripe API</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Blockchain Explorer -->
+          <div
+            class="project-card card group bg-base-100 border shadow-xl transform transition-transform hover:scale-105 hover:shadow-xl overflow-hidden relative"
+            data-categories="frontend opensource"
+          >
+            <figure class="h-48 bg-base-300 relative">
+              <img
+                src="/api/placeholder/400/320"
+                class="object-cover w-full h-full"
+                alt="Blockchain Explorer"
+              />
+              <div
+                class="absolute inset-0 bg-black/50 flex justify-center items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <a
+                  href="#"
+                  class="btn btn-sm btn-outline border-white text-white hover:bg-primary hover:border-primary"
+                >
+                  <i class="fa-solid fa-code mr-2"></i>View Code
+                </a>
+                <a
+                  href="#"
+                  class="btn btn-sm btn-outline border-white text-white hover:bg-primary hover:border-primary"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i
+                  >Live Demo
+                </a>
+              </div>
+            </figure>
+
+            <div class="card-body">
+              <h3 class="card-title text-xl font-bold text-primary">
+                Blockchain Explorer
+              </h3>
+              <p class="text-base-content mb-4">
+                Open-source blockchain explorer with real-time transaction
+                monitoring, address tracking, and network statistics
+                visualization.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="badge badge-soft badge-success">Vue.js</span>
+                <span class="badge badge-soft badge-success">GraphQL</span>
+                <span class="badge badge-soft badge-success">Web3.js</span>
+                <span class="badge badge-soft badge-success">D3.js</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Microservices Architecture -->
+          <div
+            class="project-card card group bg-base-100 border shadow-xl transform transition-transform hover:scale-105 hover:shadow-xl overflow-hidden relative"
+            data-categories="backend"
+          >
+            <figure class="h-48 bg-base-300 relative">
+              <img
+                src="/api/placeholder/400/320"
+                class="object-cover w-full h-full"
+                alt="Microservices Architecture"
+              />
+              <div
+                class="absolute inset-0 bg-black/50 flex justify-center items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <a
+                  href="#"
+                  class="btn btn-sm btn-outline border-white text-white hover:bg-primary hover:border-primary"
+                >
+                  <i class="fa-solid fa-code mr-2"></i>View Code
+                </a>
+                <a
+                  href="#"
+                  class="btn btn-sm btn-outline border-white text-white hover:bg-primary hover:border-primary"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i
+                  >Live Demo
+                </a>
+              </div>
+            </figure>
+
+            <div class="card-body">
+              <h3 class="card-title text-xl font-bold text-primary">
+                Microservices Platform
+              </h3>
+              <p class="text-base-content mb-4">
+                Scalable microservices architecture with service discovery, load
+                balancing, and fault tolerance capabilities for
+                high-availability applications.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="badge badge-soft badge-success">Spring Boot</span>
+                <span class="badge badge-soft badge-success">Docker</span>
+                <span class="badge badge-soft badge-success">Kubernetes</span>
+                <span class="badge badge-soft badge-success">Kafka</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5: Image Recognition API -->
+          <div
+            class="project-card card group bg-base-100 border shadow-xl transform transition-transform hover:scale-105 hover:shadow-xl overflow-hidden relative"
+            data-categories="aiml opensource"
+          >
+            <figure class="h-48 bg-base-300 relative">
+              <img
+                src="/api/placeholder/400/320"
+                class="object-cover w-full h-full"
+                alt="Image Recognition API"
+              />
+              <div
+                class="absolute inset-0 bg-black/50 flex justify-center items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <a
+                  href="#"
+                  class="btn btn-sm btn-outline border-white text-white hover:bg-primary hover:border-primary"
+                >
+                  <i class="fa-solid fa-code mr-2"></i>View Code
+                </a>
+                <a
+                  href="#"
+                  class="btn btn-sm btn-outline border-white text-white hover:bg-primary hover:border-primary"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i
+                  >Live Demo
+                </a>
+              </div>
+            </figure>
+
+            <div class="card-body">
+              <h3 class="card-title text-xl font-bold text-primary">
+                Image Recognition API
+              </h3>
+              <p class="text-base-content mb-4">
+                Open-source image recognition service with fine-tuned models for
+                specialized domains including medical diagnostics and retail
+                inventory.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="badge badge-soft badge-success">TensorFlow</span>
+                <span class="badge badge-soft badge-success">FastAPI</span>
+                <span class="badge badge-soft badge-success">PyTorch</span>
+                <span class="badge badge-soft badge-success">OpenCV</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6: Real-time Dashboard -->
+          <div
+            class="project-card card group bg-base-100 border shadow-xl transform transition-transform hover:scale-105 hover:shadow-xl overflow-hidden relative"
+            data-categories="fullstack frontend"
+          >
+            <figure class="h-48 bg-base-300 relative">
+              <img
+                src="/api/placeholder/400/320"
+                class="object-cover w-full h-full"
+                alt="Real-time Dashboard"
+              />
+              <div
+                class="absolute inset-0 bg-black/50 flex justify-center items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <a
+                  href="#"
+                  class="btn btn-sm btn-outline border-white text-white hover:bg-primary hover:border-primary"
+                >
+                  <i class="fa-solid fa-code mr-2"></i>View Code
+                </a>
+                <a
+                  href="#"
+                  class="btn btn-sm btn-outline border-white text-white hover:bg-primary hover:border-primary"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i
+                  >Live Demo
+                </a>
+              </div>
+            </figure>
+
+            <div class="card-body">
+              <h3 class="card-title text-xl font-bold text-primary">
+                Real-time Analytics Dashboard
+              </h3>
+              <p class="text-base-content mb-4">
+                Interactive dashboard with real-time data visualization,
+                customizable widgets, and automated reporting for business
+                intelligence.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="badge badge-soft badge-success">Next.js</span>
+                <span class="badge badge-soft badge-success">Socket.IO</span>
+                <span class="badge badge-soft badge-success">D3.js</span>
+                <span class="badge badge-soft badge-success">PostgreSQL</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Add the JavaScript for search and filtering functionality -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const searchInput = document.getElementById("project-search");
+        const filterButtons = document.querySelectorAll("#filter-buttons li");
+        const projectCards = document.querySelectorAll(".project-card");
+
+        // Apply active style to "All" button by default
+        const allButton = document.querySelector('[data-filter="all"]');
+        allButton.classList.add(
+          "active",
+          "bg-base-content",
+          "text-black",
+          "border-base-200"
+        );
+
+        // Set active filter button
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            // Remove active class from all buttons
+            filterButtons.forEach((btn) => {
+              btn.classList.remove(
+                "active",
+                "bg-base-content",
+                "text-black",
+                "border-base-200"
+              );
+            });
+
+            // Add active class to clicked button
+            button.classList.add(
+              "active",
+              "bg-base-content",
+              "text-black",
+              "border-base-200"
+            );
+
+            const filter = button.getAttribute("data-filter");
+
+            // Show/hide projects based on filter
+            filterProjects(filter);
+          });
+        });
+
+        // Search functionality
+        searchInput.addEventListener("input", () => {
+          const searchTerm = searchInput.value.toLowerCase();
+
+          projectCards.forEach((card) => {
+            const title = card
+              .querySelector(".card-title")
+              .textContent.toLowerCase();
+            const description = card
+              .querySelector(".card-body p")
+              .textContent.toLowerCase();
+            const tags = Array.from(card.querySelectorAll(".badge")).map(
+              (tag) => tag.textContent.toLowerCase()
+            );
+
+            // Check if card matches search term
+            const matchesSearch =
+              title.includes(searchTerm) ||
+              description.includes(searchTerm) ||
+              tags.some((tag) => tag.includes(searchTerm));
+
+            // Show/hide card based on search
+            if (matchesSearch) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+
+        // Filter projects based on category
+        function filterProjects(filter) {
+          projectCards.forEach((card) => {
+            if (filter === "all") {
+              card.style.display = "block";
+            } else {
+              const categories = card
+                .getAttribute("data-categories")
+                .split(" ");
+              if (categories.includes(filter)) {
+                card.style.display = "block";
+              } else {
+                card.style.display = "none";
+              }
+            }
+          });
+        }
+      });
+    </script>
 
     <!-- Hidden elements to extract theme colors -->
     <div class="hidden">
