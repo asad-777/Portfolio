@@ -17,3 +17,7 @@
   width: 100%;
   left: 0;
 }
+
+#projects-container > :nth-child(n + 7) {
+  display: none;
+}
