@@ -21,3 +21,149 @@
 #projects-container > :nth-child(n + 7) {
   display: none;
 }
+.skill-card {
+  opacity: 0;
+}
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+.animate-fadeOut {
+  animation: fadeOut 0.4s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Fancy entrance animation */
+.popup-entrance {
+  animation: popupEnter 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+  transform-origin: center;
+}
+
+@keyframes popupEnter {
+  0% {
+    transform: scale(0) rotate(-10deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05) rotate(5deg);
+  }
+  70% {
+    transform: scale(0.95) rotate(-2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+
+/* Fancy exit animation */
+.popup-exit {
+  animation: popupExit 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+  transform-origin: center;
+}
+
+@keyframes popupExit {
+  0% {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(1.05) rotate(2deg);
+  }
+  100% {
+    transform: scale(0) rotate(-10deg);
+    opacity: 0;
+  }
+}
+
+/* Card hover effects */
+.skill-card {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.4s ease, background-color 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.skill-card:hover {
+  transform: scale(1.05) translateY(-10px);
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.3);
+  background-color: rgba(var(--b1, var(--b1-rgb)), 0.9);
+}
+
+/* Add a subtle pulse effect to cards to attract attention */
+@keyframes subtlePulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.skill-card::after {
+  content: "Click to see more";
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background-color: rgba(var(--p, var(--p-rgb)), 0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.skill-card:hover::after {
+  opacity: 1;
+}
+
+/* Adding a 3D card flip effect for a more interactive feel */
+.skill-card.clicked {
+  animation: cardFlip 0.6s forwards;
+}
+
+@keyframes cardFlip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+/* Make the content modal slightly bouncy */
+#skill-popup-content {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Fancy effect for the close button */
+#close-popup {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#close-popup:hover {
+  transform: rotate(90deg);
+  background-color: var(--p);
+  color: white;
+}

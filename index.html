@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="synthwave">
+<html lang="en" data-theme="night">
   <head>
     <link rel="icon" href="/images/Frame 1.png" />
     <link
@@ -294,7 +294,8 @@
         >
           <!-- Frontend Card -->
           <div
-            class="card bg-base-100 border p-6 shadow-md transform transition-transform hover:scale-[1.03] hover:shadow-xl"
+            class="card bg-base-100 border p-6 shadow-md transform transition-transform hover:scale-[1.03] hover:shadow-xl cursor-pointer skill-card"
+            data-skill="frontend"
           >
             <h3 class="font-bold text-xl mb-2 text-primary">Frontend</h3>
             <ul class="list-disc list-inside text-base-content">
@@ -307,7 +308,8 @@
 
           <!-- Backend Card -->
           <div
-            class="card bg-base-100 border p-6 shadow-md transform transition-transform hover:scale-[1.03] hover:shadow-xl"
+            class="card bg-base-100 border p-6 shadow-md transform transition-transform hover:scale-[1.03] hover:shadow-xl cursor-pointer skill-card"
+            data-skill="backend"
           >
             <h3 class="font-bold text-xl mb-2 text-primary">Backend</h3>
             <ul class="list-disc list-inside text-base-content">
@@ -320,20 +322,22 @@
 
           <!-- AI & Data Card -->
           <div
-            class="card bg-base-100 border p-6 shadow-md transform transition-transform hover:scale-[1.03] hover:shadow-xl"
+            class="card bg-base-100 border p-6 shadow-md transform transition-transform hover:scale-[1.03] hover:shadow-xl cursor-pointer skill-card"
+            data-skill="aidata"
           >
             <h3 class="font-bold text-xl mb-2 text-primary">AI & Data</h3>
             <ul class="list-disc list-inside text-base-content">
-              <li>Generative Ai</li>
-              <li>Langchain & CrewAi</li>
-              <li>Agentic Ai</li>
-              <li>Rag and Tool Calling</li>
+              <li>Generative AI</li>
+              <li>Langchain & CrewAI</li>
+              <li>Agentic AI</li>
+              <li>RAG and Tool Calling</li>
             </ul>
           </div>
 
           <!-- Programming Foundations Card -->
           <div
-            class="card bg-base-100 border p-6 shadow-md transform transition-transform hover:scale-[1.03] hover:shadow-xl"
+            class="card bg-base-100 border p-6 shadow-md transform transition-transform hover:scale-[1.03] hover:shadow-xl cursor-pointer skill-card"
+            data-skill="programming"
           >
             <h3 class="font-bold text-xl mb-2 text-primary">Programming</h3>
             <ul class="list-disc list-inside text-base-content">
@@ -346,6 +350,436 @@
         </div>
       </div>
     </div>
+
+    <!-- Full Screen Popup Modal Structure -->
+    <div
+      id="skill-popup-overlay"
+      class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex justify-center items-center"
+    >
+      <div
+        id="skill-popup-content"
+        class="relative bg-base-100 p-8 rounded-xl shadow-2xl border border-primary w-11/12 max-w-4xl max-h-[90vh] overflow-y-auto"
+      >
+        <button
+          id="close-popup"
+          class="absolute top-4 right-4 text-2xl w-10 h-10 flex items-center justify-center rounded-full bg-base-300 hover:bg-base-200 transition-colors"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+
+        <!-- Frontend Skill Content -->
+        <div id="frontend-content" class="skill-detail-content hidden">
+          <h2 class="text-3xl font-bold mb-6 text-primary">
+            Frontend Development
+          </h2>
+          <div class="space-y-4">
+            <p class="text-lg">
+              My frontend development skills focus on creating responsive,
+              aesthetically pleasing, and user-friendly interfaces.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+              <div class="card bg-base-300 p-6">
+                <h3 class="text-xl font-bold mb-3">HTML & CSS</h3>
+                <ul class="list-disc list-inside space-y-2">
+                  <li>Semantic HTML5 markup</li>
+                  <li>Responsive design principles</li>
+                  <li>CSS animations and transitions</li>
+                  <li>Cross-browser compatibility</li>
+                  <li>Web accessibility standards</li>
+                </ul>
+              </div>
+
+              <div class="card bg-base-300 p-6">
+                <h3 class="text-xl font-bold mb-3">JavaScript</h3>
+                <ul class="list-disc list-inside space-y-2">
+                  <li>ES6+ features</li>
+                  <li>DOM manipulation</li>
+                  <li>Event handling</li>
+                  <li>Asynchronous programming</li>
+                  <li>Third-party API integration</li>
+                </ul>
+              </div>
+
+              <div class="card bg-base-300 p-6">
+                <h3 class="text-xl font-bold mb-3">Tailwind CSS</h3>
+                <ul class="list-disc list-inside space-y-2">
+                  <li>Utility-first workflow</li>
+                  <li>Custom configurations</li>
+                  <li>Responsive design using breakpoints</li>
+                  <li>Dark mode implementation</li>
+                  <li>Component extraction</li>
+                </ul>
+              </div>
+
+              <div class="card bg-base-300 p-6">
+                <h3 class="text-xl font-bold mb-3">DaisyUI</h3>
+                <ul class="list-disc list-inside space-y-2">
+                  <li>Component customization</li>
+                  <li>Theme management</li>
+                  <li>Responsive components</li>
+                  <li>Form elements styling</li>
+                  <li>Integration with Tailwind</li>
+                </ul>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4">Recent Projects</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="card bg-base-300 p-4">
+                <h4 class="font-bold mb-2">Portfolio Website</h4>
+                <p>
+                  Modern and responsive portfolio website built with Tailwind
+                  CSS and DaisyUI.
+                </p>
+              </div>
+              <div class="card bg-base-300 p-4">
+                <h4 class="font-bold mb-2">Dashboard UI</h4>
+                <p>
+                  Interactive dashboard interface with data visualization
+                  components.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend Skill Content -->
+        <div id="backend-content" class="skill-detail-content hidden">
+          <h2 class="text-3xl font-bold mb-6 text-primary">
+            Backend Development
+          </h2>
+          <div class="space-y-4">
+            <p class="text-lg">
+              My backend development skills focus on building robust, scalable
+              server-side applications and APIs.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+              <div class="card bg-base-300 p-6">
+                <h3 class="text-xl font-bold mb-3">Python</h3>
+                <ul class="list-disc list-inside space-y-2">
+                  <li>Advanced Python concepts</li>
+                  <li>OOP principles</li>
+                  <li>Functional programming</li>
+                  <li>Asynchronous programming with asyncio</li>
+                  <li>Performance optimization</li>
+                </ul>
+              </div>
+
+              <div class="card bg-base-300 p-6">
+                <h3 class="text-xl font-bold mb-3">Django</h3>
+                <ul class="list-disc list-inside space-y-2">
+                  <li>MVT architecture</li>
+                  <li>Django ORM</li>
+                  <li>Authentication & authorization</li>
+                  <li>Django REST framework</li>
+                  <li>Template system</li>
+                </ul>
+              </div>
+
+              <div class="card bg-base-300 p-6">
+                <h3 class="text-xl font-bold mb-3">Flask</h3>
+                <ul class="list-disc list-inside space-y-2">
+                  <li>RESTful API development</li>
+                  <li>Blueprint structure</li>
+                  <li>SQLAlchemy integration</li>
+                  <li>JWT authentication</li>
+                  <li>Application scaling</li>
+                </ul>
+              </div>
+
+              <div class="card bg-base-300 p-6">
+                <h3 class="text-xl font-bold mb-3">REST APIs</h3>
+                <ul class="list-disc list-inside space-y-2">
+                  <li>API design principles</li>
+                  <li>HTTP methods & status codes</li>
+                  <li>Request/response handling</li>
+                  <li>API documentation</li>
+                  <li>Security best practices</li>
+                </ul>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4">Backend Projects</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="card bg-base-300 p-4">
+                <h4 class="font-bold mb-2">Content Management API</h4>
+                <p>
+                  REST API for managing content with authentication and
+                  authorization.
+                </p>
+              </div>
+              <div class="card bg-base-300 p-4">
+                <h4 class="font-bold mb-2">E-commerce Backend</h4>
+                <p>
+                  Django-based e-commerce platform with payment integration.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI & Data Skill Content -->
+        <div id="aidata-content" class="skill-detail-content hidden">
+          <h2 class="text-3xl font-bold mb-6 text-primary">AI & Data</h2>
+          <div class="space-y-4">
+            <p class="text-lg">
+              My AI and data skills focus on leveraging cutting-edge AI
+              technologies to create intelligent applications.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+              <div class="card bg-base-300 p-6">
+                <h3 class="text-xl font-bold mb-3">Generative AI</h3>
+                <ul class="list-disc list-inside space-y-2">
+                  <li>Large Language Models (LLMs)</li>
+                  <li>Prompt engineering</li>
+                  <li>Fine-tuning techniques</li>
+                  <li>Context window optimization</li>
+                  <li>Multimodal models</li>
+                </ul>
+              </div>
+
+              <div class="card bg-base-300 p-6">
+                <h3 class="text-xl font-bold mb-3">Langchain & CrewAI</h3>
+                <ul class="list-disc list-inside space-y-2">
+                  <li>LLM orchestration</li>
+                  <li>Chain of thought reasoning</li>
+                  <li>Agent systems design</li>
+                  <li>Tool integration</li>
+                  <li>Multi-agent collaboration</li>
+                </ul>
+              </div>
+
+              <div class="card bg-base-300 p-6">
+                <h3 class="text-xl font-bold mb-3">Agentic AI</h3>
+                <ul class="list-disc list-inside space-y-2">
+                  <li>Autonomous agents</li>
+                  <li>Planning & reasoning systems</li>
+                  <li>Goal-oriented behavior</li>
+                  <li>Tool usage & integration</li>
+                  <li>Memory & knowledge management</li>
+                </ul>
+              </div>
+
+              <div class="card bg-base-300 p-6">
+                <h3 class="text-xl font-bold mb-3">RAG and Tool Calling</h3>
+                <ul class="list-disc list-inside space-y-2">
+                  <li>Vector databases</li>
+                  <li>Semantic search</li>
+                  <li>Embedding models</li>
+                  <li>Knowledge retrieval pipelines</li>
+                  <li>Function calling frameworks</li>
+                </ul>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4">AI Projects</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="card bg-base-300 p-4">
+                <h4 class="font-bold mb-2">Document Analysis System</h4>
+                <p>RAG-based system for extracting insights from documents.</p>
+              </div>
+              <div class="card bg-base-300 p-4">
+                <h4 class="font-bold mb-2">AI Research Assistant</h4>
+                <p>Agentic system for automating research workflows.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Programming Skill Content -->
+        <div id="programming-content" class="skill-detail-content hidden">
+          <h2 class="text-3xl font-bold mb-6 text-primary">
+            Programming Foundations
+          </h2>
+          <div class="space-y-4">
+            <p class="text-lg">
+              My programming skills focus on building efficient, optimized, and
+              well-structured code using fundamental principles.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+              <div class="card bg-base-300 p-6">
+                <h3 class="text-xl font-bold mb-3">C & C++</h3>
+                <ul class="list-disc list-inside space-y-2">
+                  <li>Memory management</li>
+                  <li>Pointers & references</li>
+                  <li>Object-oriented programming</li>
+                  <li>Standard Template Library</li>
+                  <li>Low-level optimization</li>
+                </ul>
+              </div>
+
+              <div class="card bg-base-300 p-6">
+                <h3 class="text-xl font-bold mb-3">Data Structures</h3>
+                <ul class="list-disc list-inside space-y-2">
+                  <li>Arrays & linked lists</li>
+                  <li>Trees & graphs</li>
+                  <li>Hash tables</li>
+                  <li>Heaps & priority queues</li>
+                  <li>Custom data structure design</li>
+                </ul>
+              </div>
+
+              <div class="card bg-base-300 p-6">
+                <h3 class="text-xl font-bold mb-3">Problem Solving</h3>
+                <ul class="list-disc list-inside space-y-2">
+                  <li>Algorithmic thinking</li>
+                  <li>Complexity analysis</li>
+                  <li>Greedy algorithms</li>
+                  <li>Dynamic programming</li>
+                  <li>Divide and conquer</li>
+                </ul>
+              </div>
+
+              <div class="card bg-base-300 p-6">
+                <h3 class="text-xl font-bold mb-3">Code Optimization</h3>
+                <ul class="list-disc list-inside space-y-2">
+                  <li>Time & space complexity</li>
+                  <li>Profiling techniques</li>
+                  <li>Performance bottleneck identification</li>
+                  <li>Memory-efficient algorithms</li>
+                  <li>Benchmarking</li>
+                </ul>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4">Programming Projects</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="card bg-base-300 p-4">
+                <h4 class="font-bold mb-2">Algorithm Visualization Tool</h4>
+                <p>Interactive tool for visualizing common algorithms.</p>
+              </div>
+              <div class="card bg-base-300 p-4">
+                <h4 class="font-bold mb-2">Custom Data Structure Library</h4>
+                <p>
+                  Optimized implementations of common data structures in C++.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript for Popup Functionality -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const skillCards = document.querySelectorAll(".skill-card");
+        const popupOverlay = document.getElementById("skill-popup-overlay");
+        const closePopupBtn = document.getElementById("close-popup");
+        const skillContents = document.querySelectorAll(
+          ".skill-detail-content"
+        );
+        const popupContent = document.getElementById("skill-popup-content");
+
+        // Function to open popup
+        function openPopup(skillType) {
+          // Hide all content sections first
+          skillContents.forEach((content) => {
+            content.classList.add("hidden");
+          });
+
+          // Show the specific content
+          const contentToShow = document.getElementById(`${skillType}-content`);
+          if (contentToShow) {
+            contentToShow.classList.remove("hidden");
+          }
+
+          // Show the overlay with animation
+          popupOverlay.classList.remove("hidden");
+          popupOverlay.classList.add("animate-fadeIn");
+
+          // Apply entrance animation to the popup content
+          popupContent.classList.add("popup-entrance");
+
+          // Disable scrolling on body
+          document.body.style.overflow = "hidden";
+
+          // Remove animation class after animation completes
+          setTimeout(() => {
+            popupContent.classList.remove("popup-entrance");
+          }, 700);
+        }
+
+        // Function to close popup
+        function closePopup() {
+          popupOverlay.classList.add("animate-fadeOut");
+
+          // Add exit animation to the popup content
+          popupContent.classList.add("popup-exit");
+
+          // Wait for animation to complete before hiding
+          setTimeout(() => {
+            popupOverlay.classList.add("hidden");
+            popupOverlay.classList.remove("animate-fadeIn", "animate-fadeOut");
+            popupContent.classList.remove("popup-exit");
+
+            // Re-enable scrolling
+            document.body.style.overflow = "auto";
+          }, 500);
+        }
+
+        // Add click event to each skill card
+        skillCards.forEach((card) => {
+          card.addEventListener("click", () => {
+            const skillType = card.getAttribute("data-skill");
+            openPopup(skillType);
+          });
+        });
+
+        // Close popup when close button is clicked
+        closePopupBtn.addEventListener("click", closePopup);
+
+        // Close popup when clicking outside the content area
+        popupOverlay.addEventListener("click", (e) => {
+          if (e.target === popupOverlay) {
+            closePopup();
+          }
+        });
+
+        // Close with ESC key
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            !popupOverlay.classList.contains("hidden")
+          ) {
+            closePopup();
+          }
+        });
+      });
+    </script>
+
+    <!-- Add this script to handle the card flip animation when clicked -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const skillCards = document.querySelectorAll(".skill-card");
+
+        skillCards.forEach((card) => {
+          card.addEventListener("click", function () {
+            this.classList.add("clicked");
+
+            // Remove the class after animation completes
+            setTimeout(() => {
+              this.classList.remove("clicked");
+            }, 700);
+          });
+        });
+
+        // Optional: Add a staggered entrance animation for cards when page loads
+        setTimeout(() => {
+          skillCards.forEach((card, index) => {
+            setTimeout(() => {
+              card.style.animation =
+                "popupEnter 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards";
+              card.style.opacity = "1";
+            }, index * 150);
+          });
+        }, 300);
+      });
+    </script>
 
     <!-- Projects Section -->
     <div
