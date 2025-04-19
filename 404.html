@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="synthwave">
+  <head>
+    <link rel="icon" href="/images/Frame 1.png" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - 404</title>
+    <link href="./main.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="hero relative min-h-screen">
+      <canvas class="animated-bg absolute inset-0 w-full h-full z-0"></canvas>
+      <div class="hero-content text-center px-16">
+        <div class="border p-16 rounded-2xl bg-secondary/10 backdrop-blur-md">
+          <h1 class="text-5xl font-bold border-b rounded-xl pb-4">
+            Error 404 - Page Not Found
+          </h1>
+          <p class="py-6">
+            The Page you are trying to access does not exist. It might be under
+            construction or removed.
+          </p>
+          <a class="btn btn-primary" href="index.html">
+            <i class="fa-solid fa-arrow-left-long"></i> Go Back
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Hidden elements to extract theme colors -->
+    <div class="hidden">
+      <span id="color-primary" class="text-accent"></span>
+      <span id="color-accent" class="text-base"></span>
+      <span id="color-base" class="text-info-content"></span>
+    </div>
+
+    <script>
+      const canvases = document.querySelectorAll("canvas.animated-bg");
+
+      function getThemeColors() {
+        const getColor = (id) =>
+          getComputedStyle(document.getElementById(id)).color;
+        return {
+          cross: getColor("color-primary"),
+          star: getColor("color-accent"),
+          diamond: getColor("color-base"),
+        };
+      }
+
+      canvases.forEach((canvas) => {
+        const ctx = canvas.getContext("2d");
+        let shapes = [];
+        let shapeColors = {};
+
+        function createGridShapes() {
+          shapes = [];
+          const size = 16;
+          const spacing = 48;
+          const width = canvas.width;
+          const height = canvas.height;
+
+          const cols = Math.ceil(width / spacing) + 1;
+          const rows = Math.ceil(height / spacing) + 1;
+
+          for (let y = 0; y < rows; y++) {
+            for (let x = 0; x < cols; x++) {
+              const offsetX = (y % 2) * (spacing / 2);
+              const shape = {
+                x: x * spacing + offsetX,
+                y: y * spacing,
+                size: size,
+                rotation: Math.random() * Math.PI,
+                type: ["cross", "star", "diamond"][
+                  Math.floor(Math.random() * 3)
+                ],
+                direction: Math.random() < 0.5 ? 1 : -1,
+              };
+              shapes.push(shape);
+            }
+          }
+        }
+
+        function drawShape(shape) {
+          ctx.save();
+          ctx.translate(shape.x, shape.y);
+          ctx.rotate(shape.rotation);
+          ctx.strokeStyle = shapeColors[shape.type];
+          ctx.lineWidth = 1.2;
+
+          const s = shape.size / 2;
+          ctx.beginPath();
+
+          if (shape.type === "cross") {
+            ctx.moveTo(-s, 0);
+            ctx.lineTo(s, 0);
+            ctx.moveTo(0, -s);
+            ctx.lineTo(0, s);
+          } else if (shape.type === "star") {
+            for (let i = 0; i < 5; i++) {
+              const angle = (i * 2 * Math.PI) / 5;
+              const x = Math.cos(angle) * s;
+              const y = Math.sin(angle) * s;
+              ctx.lineTo(x, y);
+            }
+            ctx.closePath();
+          } else if (shape.type === "diamond") {
+            ctx.moveTo(0, -s);
+            ctx.lineTo(s, 0);
+            ctx.lineTo(0, s);
+            ctx.lineTo(-s, 0);
+            ctx.closePath();
+          }
+
+          ctx.stroke();
+          ctx.restore();
+        }
+
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          shapes.forEach((shape) => {
+            shape.rotation += 0.01 * shape.direction;
+            if (shape.rotation > Math.PI || shape.rotation < -Math.PI) {
+              shape.direction *= -1;
+            }
+            drawShape(shape);
+          });
+          requestAnimationFrame(animate);
+        }
+
+        function resizeCanvas() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+          shapeColors = getThemeColors();
+          createGridShapes();
+        }
+
+        window.addEventListener("resize", resizeCanvas);
+        window.addEventListener("DOMContentLoaded", () => {
+          resizeCanvas();
+          animate();
+        });
+      });
+    </script>
+  </body>
+</html>
