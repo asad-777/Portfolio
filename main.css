@@ -167,3 +167,6 @@
   background-color: var(--p);
   color: white;
 }
+html {
+  scroll-behavior: smooth;
+}

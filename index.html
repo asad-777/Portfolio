@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="synthwave">
+<html lang="en" data-theme="winter">
   <head>
     <link rel="icon" href="/images/Frame 1.png" />
     <link
@@ -31,7 +31,7 @@
   </head>
   <body>
     <!-- navbar -->
-    <div class="fixed top-4 inset-x-0 z-50 px-4 py-2 lg:px-8">
+    <div class="fixed top-4 inset-x-0 z-50 px-4 py-2 lg:px-8 z-52">
       <div
         class="navbar max-w-screen-xl mx-auto bg-base-100/60 backdrop-blur-md border border-accent/30 rounded-xl shadow px-6 py-3"
       >
@@ -58,16 +58,26 @@
               class="menu menu-sm dropdown-content bg-base-300 border transform translate-y-2 font-extrabold text-2xl text-accent-content rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li class="p-2">
-                <a class="px-2 py-4 4 nav-link-hover">About</a>
+                <a class="px-2 py-4 4 nav-link-hover" href="#about_section_link"
+                  >About</a
+                >
               </li>
               <li class="p-2">
-                <a class="px-2 py-4 nav-link-hover">Skill Set</a>
+                <a class="px-2 py-4 nav-link-hover" href="#skill_section_link"
+                  >Skill Set</a
+                >
               </li>
               <li class="p-2">
-                <a class="px-2 py-4 nav-link-hover">Projects</a>
+                <a
+                  class="px-2 py-4 nav-link-hover"
+                  href="#projects_section_link"
+                  >Projects</a
+                >
               </li>
               <li class="p-2">
-                <a class="px-2 py-4 nav-link-hover">Contact</a>
+                <a class="px-2 py-4 nav-link-hover" href="#contact_section_link"
+                  >Contact</a
+                >
               </li>
             </ul>
           </div>
@@ -78,36 +88,50 @@
           /></a>
         </div>
 
-        <img
-          src="./images/Frajkjme 1.png"
-          class="w-10 h-10 rounded-full scale-[3] lg:hidden ml-[-15vw]"
-        />
+        <a href="index.html"
+          ><img
+            src="./images/Frajkjme 1.png"
+            class="w-10 h-10 rounded-full scale-[3] lg:hidden ml-[-15vw]"
+        /></a>
         <div class="navbar-center hidden lg:flex">
           <ul
             class="menu menu-horizontal px-1 text-accent text-lg font-extrabold"
           >
-            <li class="px-2 ml-2"><a class="px-4 nav-link-hover">About</a></li>
             <li class="px-2 ml-2">
-              <a class="px-4 nav-link-hover">Skill Set</a>
+              <a class="px-4 nav-link-hover" href="#about_section_link"
+                >About</a
+              >
             </li>
             <li class="px-2 ml-2">
-              <a class="px-4 nav-link-hover">Projects</a>
+              <a class="px-4 nav-link-hover" href="#skill_section_link"
+                >Skill Set</a
+              >
             </li>
             <li class="px-2 ml-2">
-              <a class="px-4 nav-link-hover">Contact</a>
+              <a class="px-4 nav-link-hover" href="#projects_section_link"
+                >Projects</a
+              >
+            </li>
+            <li class="px-2 ml-2">
+              <a class="px-4 nav-link-hover" href="#contact_section_link"
+                >Contact</a
+              >
             </li>
           </ul>
         </div>
         <div class="navbar-end">
           <a
-            class="px-4 py-2 border rounded-xl btn border-neutral transition hover:bg-neutral"
+            class="px-4 py-2 border rounded-xl btn border-secondary text-secondary hover:bg-accent hover:text-accent-content"
             ><span class="nav-link-hover">Lets Connect</span>
           </a>
         </div>
       </div>
     </div>
     <!-- hero section -->
-    <div class="hero min-h-screen relative bg-base-300 overflow-hidden">
+    <div
+      class="hero min-h-screen relative bg-base-300 overflow-hidden z-51"
+      id="hero"
+    >
       <!-- Structured Diagonal Grid Background -->
       <canvas class="animated-bg absolute inset-0 w-full h-full z-0"></canvas>
 
@@ -131,7 +155,7 @@
           </p>
           <div class="w-full flex justify-center">
             <a
-              class="btn btn-wide border-neutral border-2 hover:bg-base-content hover:text-base-200 transition bg-base-100/50 font-semibold"
+              class="btn btn-wide border-2 transition border-secondary text-secondary hover:bg-accent hover:text-accent-content font-semibold"
             >
               <i class="fa-solid fa-download mr-2 fa-lg"></i> Download Resume
             </a>
@@ -143,6 +167,7 @@
     <!-- About Section -->
     <section
       class="min-h-screen relative bg-base-200 px-6 md:px-16 py-12 pb-12"
+      id="about_section_link"
     >
       <div class="mx-auto text-base-content">
         <h2 class="text-2xl font-semibold pl-2 text-primary">Introduction</h2>
@@ -278,740 +303,760 @@
       </div>
     </section>
 
-    <!-- Overview Section -->
-    <div class="hero min-h-screen relative bg-base-300 overflow-hidden">
-      <!-- Structured Diagonal Grid Background -->
-      <canvas class="animated-bg absolute inset-0 w-full h-full z-0"></canvas>
-
-      <!-- Hero Content -->
+    <!-- Skill Section -->
+    <div>
       <div
-        class="hero-content w-full px-4 py-8 relative z-10 grid grid-cols-1 justify-center items-center w-full"
+        class="hero min-h-screen relative bg-base-300 overflow-hidden"
+        id="skill_section_link"
       >
-        <div class="text-center mb-8">
-          <h2
-            class="font-extrabold text-5xl underline decoration-9 underline-offset-8 text-base-content"
-          >
-            <span class="px-4 py-2 bg-base-300 pb-4 rounded-xl">Skill Set</span>
-          </h2>
-        </div>
+        <!-- Structured Diagonal Grid Background -->
+        <canvas class="animated-bg absolute inset-0 w-full h-full z-0"></canvas>
 
-        <!-- Cards Grid -->
+        <!-- Hero Content -->
         <div
-          class="w-full lg:px-12 px-8 justify-center items-center grid gap-6 lg:grid-cols-4 md:grid-cols-2 grid-cols-1"
+          class="hero-content w-full px-4 py-8 relative z-10 grid grid-cols-1 justify-center items-center w-full"
         >
-          <!-- Frontend Card -->
-          <div
-            class="card bg-base-100 border p-6 shadow-md transform transition-transform hover:scale-[1.03] hover:shadow-xl cursor-pointer skill-card"
-            data-skill="frontend"
-          >
-            <h3 class="font-bold text-xl mb-2 text-primary">Frontend</h3>
-            <ul class="list-disc list-inside text-base-content">
-              <li>HTML, CSS</li>
-              <li>Vanilla JavaScript</li>
-              <li>Tailwind CSS</li>
-              <li>DaisyUI</li>
-            </ul>
+          <div class="text-center mb-8">
+            <h2
+              class="font-extrabold text-5xl underline decoration-9 underline-offset-8 text-base-content"
+            >
+              <span class="px-4 py-2 bg-base-300 pb-4 rounded-xl"
+                >Skill Set</span
+              >
+            </h2>
           </div>
 
-          <!-- Backend Card -->
+          <!-- Cards Grid -->
           <div
-            class="card bg-base-100 border p-6 shadow-md transform transition-transform hover:scale-[1.03] hover:shadow-xl cursor-pointer skill-card"
-            data-skill="backend"
+            class="w-full lg:px-12 px-8 justify-center items-center grid gap-6 lg:grid-cols-4 md:grid-cols-2 grid-cols-1"
           >
-            <h3 class="font-bold text-xl mb-2 text-primary">Backend</h3>
-            <ul class="list-disc list-inside text-base-content">
-              <li>Python (Full Stack)</li>
-              <li>Django</li>
-              <li>Flask</li>
-              <li>REST APIs</li>
-            </ul>
-          </div>
+            <!-- Frontend Card -->
+            <div
+              class="card bg-base-100 border p-6 shadow-md transform transition-transform hover:scale-[1.03] hover:shadow-xl cursor-pointer skill-card"
+              data-skill="frontend"
+            >
+              <h3 class="font-bold text-xl mb-2 text-primary">Frontend</h3>
+              <ul class="list-disc list-inside text-base-content">
+                <li>HTML, CSS</li>
+                <li>Vanilla JavaScript</li>
+                <li>Tailwind CSS</li>
+                <li>DaisyUI</li>
+              </ul>
+            </div>
 
-          <!-- AI & Data Card -->
-          <div
-            class="card bg-base-100 border p-6 shadow-md transform transition-transform hover:scale-[1.03] hover:shadow-xl cursor-pointer skill-card"
-            data-skill="aidata"
-          >
-            <h3 class="font-bold text-xl mb-2 text-primary">AI & Data</h3>
-            <ul class="list-disc list-inside text-base-content">
-              <li>Generative AI</li>
-              <li>Langchain & CrewAI</li>
-              <li>Agentic AI</li>
-              <li>RAG and Tool Calling</li>
-            </ul>
-          </div>
+            <!-- Backend Card -->
+            <div
+              class="card bg-base-100 border p-6 shadow-md transform transition-transform hover:scale-[1.03] hover:shadow-xl cursor-pointer skill-card"
+              data-skill="backend"
+            >
+              <h3 class="font-bold text-xl mb-2 text-primary">Backend</h3>
+              <ul class="list-disc list-inside text-base-content">
+                <li>Python (Full Stack)</li>
+                <li>Django</li>
+                <li>Flask</li>
+                <li>REST APIs</li>
+              </ul>
+            </div>
 
-          <!-- Programming Foundations Card -->
-          <div
-            class="card bg-base-100 border p-6 shadow-md transform transition-transform hover:scale-[1.03] hover:shadow-xl cursor-pointer skill-card"
-            data-skill="programming"
-          >
-            <h3 class="font-bold text-xl mb-2 text-primary">Programming</h3>
-            <ul class="list-disc list-inside text-base-content">
-              <li>C & C++</li>
-              <li>Data Structures</li>
-              <li>Problem Solving</li>
-              <li>Code Optimization</li>
-            </ul>
+            <!-- AI & Data Card -->
+            <div
+              class="card bg-base-100 border p-6 shadow-md transform transition-transform hover:scale-[1.03] hover:shadow-xl cursor-pointer skill-card"
+              data-skill="aidata"
+            >
+              <h3 class="font-bold text-xl mb-2 text-primary">AI & Data</h3>
+              <ul class="list-disc list-inside text-base-content">
+                <li>Generative AI</li>
+                <li>Langchain & CrewAI</li>
+                <li>Agentic AI</li>
+                <li>RAG and Tool Calling</li>
+              </ul>
+            </div>
+
+            <!-- Programming Foundations Card -->
+            <div
+              class="card bg-base-100 border p-6 shadow-md transform transition-transform hover:scale-[1.03] hover:shadow-xl cursor-pointer skill-card"
+              data-skill="programming"
+            >
+              <h3 class="font-bold text-xl mb-2 text-primary">Programming</h3>
+              <ul class="list-disc list-inside text-base-content">
+                <li>C & C++</li>
+                <li>Data Structures</li>
+                <li>Problem Solving</li>
+                <li>Code Optimization</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Full Screen Popup Modal Structure -->
-    <div
-      id="skill-popup-overlay"
-      class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex justify-center items-center"
-    >
+      <!-- Full Screen Popup Modal Structure -->
       <div
-        id="skill-popup-content"
-        class="relative bg-base-100 p-8 rounded-xl shadow-2xl border border-primary w-11/12 max-h-[90vh] overflow-y-auto"
+        id="skill-popup-overlay"
+        class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex justify-center items-center"
       >
-        <button
-          id="close-popup"
-          class="absolute top-4 right-4 text-2xl w-10 h-10 flex items-center justify-center rounded-full bg-base-300 hover:bg-base-200 transition-colors"
+        <div
+          id="skill-popup-content"
+          class="relative bg-base-100 p-8 rounded-xl shadow-2xl border border-primary w-11/12 max-h-[90vh] overflow-y-auto"
         >
-          <i class="fas fa-times"></i>
-        </button>
+          <button
+            id="close-popup"
+            class="absolute top-4 right-4 text-2xl w-10 h-10 flex items-center justify-center rounded-full bg-base-300 hover:bg-base-200 transition-colors"
+          >
+            <i class="fas fa-times"></i>
+          </button>
 
-        <!-- Frontend Skill Content -->
-        <div id="frontend-content" class="skill-detail-content hidden">
-          <h2 class="text-3xl font-bold mb-6 text-primary">
-            Frontend Development
-          </h2>
-          <div class="space-y-4">
-            <p class="text-lg">
-              My frontend development skills focus on creating responsive,
-              aesthetically pleasing, and user-friendly interfaces.
-            </p>
+          <!-- Frontend Skill Content -->
+          <div id="frontend-content" class="skill-detail-content hidden">
+            <h2 class="text-3xl font-bold mb-6 text-primary">
+              Frontend Development
+            </h2>
+            <div class="space-y-4">
+              <p class="text-lg">
+                My frontend development skills focus on creating responsive,
+                aesthetically pleasing, and user-friendly interfaces.
+              </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-              <div class="card bg-base-300 p-6">
-                <h3 class="text-xl font-bold mb-3">HTML & CSS</h3>
-                <ul class="list-disc list-inside space-y-2">
-                  <li>Semantic HTML5 markup</li>
-                  <li>Responsive design principles</li>
-                  <li>CSS animations and transitions</li>
-                  <li>Cross-browser compatibility</li>
-                  <li>Web accessibility standards</li>
-                </ul>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div class="card bg-base-300 p-6">
+                  <h3 class="text-xl font-bold mb-3">HTML & CSS</h3>
+                  <ul class="list-disc list-inside space-y-2">
+                    <li>Semantic HTML5 markup</li>
+                    <li>Responsive design principles</li>
+                    <li>CSS animations and transitions</li>
+                    <li>Cross-browser compatibility</li>
+                    <li>Web accessibility standards</li>
+                  </ul>
+                </div>
+
+                <div class="card bg-base-300 p-6">
+                  <h3 class="text-xl font-bold mb-3">JavaScript</h3>
+                  <ul class="list-disc list-inside space-y-2">
+                    <li>ES6+ features</li>
+                    <li>DOM manipulation</li>
+                    <li>Event handling</li>
+                    <li>Asynchronous programming</li>
+                    <li>Third-party API integration</li>
+                  </ul>
+                </div>
+
+                <div class="card bg-base-300 p-6">
+                  <h3 class="text-xl font-bold mb-3">Tailwind CSS</h3>
+                  <ul class="list-disc list-inside space-y-2">
+                    <li>Utility-first workflow</li>
+                    <li>Custom configurations</li>
+                    <li>Responsive design using breakpoints</li>
+                    <li>Dark mode implementation</li>
+                    <li>Component extraction</li>
+                  </ul>
+                </div>
+
+                <div class="card bg-base-300 p-6">
+                  <h3 class="text-xl font-bold mb-3">DaisyUI</h3>
+                  <ul class="list-disc list-inside space-y-2">
+                    <li>Component customization</li>
+                    <li>Theme management</li>
+                    <li>Responsive components</li>
+                    <li>Form elements styling</li>
+                    <li>Integration with Tailwind</li>
+                  </ul>
+                </div>
               </div>
 
-              <div class="card bg-base-300 p-6">
-                <h3 class="text-xl font-bold mb-3">JavaScript</h3>
-                <ul class="list-disc list-inside space-y-2">
-                  <li>ES6+ features</li>
-                  <li>DOM manipulation</li>
-                  <li>Event handling</li>
-                  <li>Asynchronous programming</li>
-                  <li>Third-party API integration</li>
-                </ul>
-              </div>
-
-              <div class="card bg-base-300 p-6">
-                <h3 class="text-xl font-bold mb-3">Tailwind CSS</h3>
-                <ul class="list-disc list-inside space-y-2">
-                  <li>Utility-first workflow</li>
-                  <li>Custom configurations</li>
-                  <li>Responsive design using breakpoints</li>
-                  <li>Dark mode implementation</li>
-                  <li>Component extraction</li>
-                </ul>
-              </div>
-
-              <div class="card bg-base-300 p-6">
-                <h3 class="text-xl font-bold mb-3">DaisyUI</h3>
-                <ul class="list-disc list-inside space-y-2">
-                  <li>Component customization</li>
-                  <li>Theme management</li>
-                  <li>Responsive components</li>
-                  <li>Form elements styling</li>
-                  <li>Integration with Tailwind</li>
-                </ul>
-              </div>
-            </div>
-
-            <h3 class="text-2xl font-bold mt-8 mb-4">Recent Projects</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="card bg-base-300 p-4">
-                <h4 class="font-bold mb-2">Portfolio Website</h4>
-                <p>
-                  Modern and responsive portfolio website built with Tailwind
-                  CSS and DaisyUI.
-                </p>
-              </div>
-              <div class="card bg-base-300 p-4">
-                <h4 class="font-bold mb-2">Dashboard UI</h4>
-                <p>
-                  Interactive dashboard interface with data visualization
-                  components.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Backend Skill Content -->
-        <div id="backend-content" class="skill-detail-content hidden">
-          <h2 class="text-3xl font-bold mb-6 text-primary">
-            Backend Development
-          </h2>
-          <div class="space-y-4">
-            <p class="text-lg">
-              My backend development skills focus on building robust, scalable
-              server-side applications and APIs.
-            </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-              <div class="card bg-base-300 p-6">
-                <h3 class="text-xl font-bold mb-3">Python</h3>
-                <ul class="list-disc list-inside space-y-2">
-                  <li>Advanced Python concepts</li>
-                  <li>OOP principles</li>
-                  <li>Functional programming</li>
-                  <li>Asynchronous programming with asyncio</li>
-                  <li>Performance optimization</li>
-                </ul>
-              </div>
-
-              <div class="card bg-base-300 p-6">
-                <h3 class="text-xl font-bold mb-3">Django</h3>
-                <ul class="list-disc list-inside space-y-2">
-                  <li>MVT architecture</li>
-                  <li>Django ORM</li>
-                  <li>Authentication & authorization</li>
-                  <li>Django REST framework</li>
-                  <li>Template system</li>
-                </ul>
-              </div>
-
-              <div class="card bg-base-300 p-6">
-                <h3 class="text-xl font-bold mb-3">Flask</h3>
-                <ul class="list-disc list-inside space-y-2">
-                  <li>RESTful API development</li>
-                  <li>Blueprint structure</li>
-                  <li>SQLAlchemy integration</li>
-                  <li>JWT authentication</li>
-                  <li>Application scaling</li>
-                </ul>
-              </div>
-
-              <div class="card bg-base-300 p-6">
-                <h3 class="text-xl font-bold mb-3">REST APIs</h3>
-                <ul class="list-disc list-inside space-y-2">
-                  <li>API design principles</li>
-                  <li>HTTP methods & status codes</li>
-                  <li>Request/response handling</li>
-                  <li>API documentation</li>
-                  <li>Security best practices</li>
-                </ul>
-              </div>
-            </div>
-
-            <h3 class="text-2xl font-bold mt-8 mb-4">Backend Projects</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="card bg-base-300 p-4">
-                <h4 class="font-bold mb-2">Content Management API</h4>
-                <p>
-                  REST API for managing content with authentication and
-                  authorization.
-                </p>
-              </div>
-              <div class="card bg-base-300 p-4">
-                <h4 class="font-bold mb-2">E-commerce Backend</h4>
-                <p>
-                  Django-based e-commerce platform with payment integration.
-                </p>
+              <h3 class="text-2xl font-bold mt-8 mb-4">Recent Projects</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="card bg-base-300 p-4">
+                  <h4 class="font-bold mb-2">Portfolio Website</h4>
+                  <p>
+                    Modern and responsive portfolio website built with Tailwind
+                    CSS and DaisyUI.
+                  </p>
+                </div>
+                <div class="card bg-base-300 p-4">
+                  <h4 class="font-bold mb-2">Dashboard UI</h4>
+                  <p>
+                    Interactive dashboard interface with data visualization
+                    components.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- AI & Data Skill Content -->
-        <div id="aidata-content" class="skill-detail-content hidden">
-          <h2 class="text-3xl font-bold mb-6 text-primary">AI & Data</h2>
-          <div class="space-y-4">
-            <p class="text-lg">
-              My AI and data skills focus on leveraging cutting-edge AI
-              technologies to create intelligent applications.
-            </p>
+          <!-- Backend Skill Content -->
+          <div id="backend-content" class="skill-detail-content hidden">
+            <h2 class="text-3xl font-bold mb-6 text-primary">
+              Backend Development
+            </h2>
+            <div class="space-y-4">
+              <p class="text-lg">
+                My backend development skills focus on building robust, scalable
+                server-side applications and APIs.
+              </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-              <div class="card bg-base-300 p-6">
-                <h3 class="text-xl font-bold mb-3">Generative AI</h3>
-                <ul class="list-disc list-inside space-y-2">
-                  <li>Large Language Models (LLMs)</li>
-                  <li>Prompt engineering</li>
-                  <li>Fine-tuning techniques</li>
-                  <li>Context window optimization</li>
-                  <li>Multimodal models</li>
-                </ul>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div class="card bg-base-300 p-6">
+                  <h3 class="text-xl font-bold mb-3">Python</h3>
+                  <ul class="list-disc list-inside space-y-2">
+                    <li>Advanced Python concepts</li>
+                    <li>OOP principles</li>
+                    <li>Functional programming</li>
+                    <li>Asynchronous programming with asyncio</li>
+                    <li>Performance optimization</li>
+                  </ul>
+                </div>
+
+                <div class="card bg-base-300 p-6">
+                  <h3 class="text-xl font-bold mb-3">Django</h3>
+                  <ul class="list-disc list-inside space-y-2">
+                    <li>MVT architecture</li>
+                    <li>Django ORM</li>
+                    <li>Authentication & authorization</li>
+                    <li>Django REST framework</li>
+                    <li>Template system</li>
+                  </ul>
+                </div>
+
+                <div class="card bg-base-300 p-6">
+                  <h3 class="text-xl font-bold mb-3">Flask</h3>
+                  <ul class="list-disc list-inside space-y-2">
+                    <li>RESTful API development</li>
+                    <li>Blueprint structure</li>
+                    <li>SQLAlchemy integration</li>
+                    <li>JWT authentication</li>
+                    <li>Application scaling</li>
+                  </ul>
+                </div>
+
+                <div class="card bg-base-300 p-6">
+                  <h3 class="text-xl font-bold mb-3">REST APIs</h3>
+                  <ul class="list-disc list-inside space-y-2">
+                    <li>API design principles</li>
+                    <li>HTTP methods & status codes</li>
+                    <li>Request/response handling</li>
+                    <li>API documentation</li>
+                    <li>Security best practices</li>
+                  </ul>
+                </div>
               </div>
 
-              <div class="card bg-base-300 p-6">
-                <h3 class="text-xl font-bold mb-3">Langchain & CrewAI</h3>
-                <ul class="list-disc list-inside space-y-2">
-                  <li>LLM orchestration</li>
-                  <li>Chain of thought reasoning</li>
-                  <li>Agent systems design</li>
-                  <li>Tool integration</li>
-                  <li>Multi-agent collaboration</li>
-                </ul>
-              </div>
-
-              <div class="card bg-base-300 p-6">
-                <h3 class="text-xl font-bold mb-3">Agentic AI</h3>
-                <ul class="list-disc list-inside space-y-2">
-                  <li>Autonomous agents</li>
-                  <li>Planning & reasoning systems</li>
-                  <li>Goal-oriented behavior</li>
-                  <li>Tool usage & integration</li>
-                  <li>Memory & knowledge management</li>
-                </ul>
-              </div>
-
-              <div class="card bg-base-300 p-6">
-                <h3 class="text-xl font-bold mb-3">RAG and Tool Calling</h3>
-                <ul class="list-disc list-inside space-y-2">
-                  <li>Vector databases</li>
-                  <li>Semantic search</li>
-                  <li>Embedding models</li>
-                  <li>Knowledge retrieval pipelines</li>
-                  <li>Function calling frameworks</li>
-                </ul>
-              </div>
-            </div>
-
-            <h3 class="text-2xl font-bold mt-8 mb-4">AI Projects</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="card bg-base-300 p-4">
-                <h4 class="font-bold mb-2">Document Analysis System</h4>
-                <p>RAG-based system for extracting insights from documents.</p>
-              </div>
-              <div class="card bg-base-300 p-4">
-                <h4 class="font-bold mb-2">AI Research Assistant</h4>
-                <p>Agentic system for automating research workflows.</p>
+              <h3 class="text-2xl font-bold mt-8 mb-4">Backend Projects</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="card bg-base-300 p-4">
+                  <h4 class="font-bold mb-2">Content Management API</h4>
+                  <p>
+                    REST API for managing content with authentication and
+                    authorization.
+                  </p>
+                </div>
+                <div class="card bg-base-300 p-4">
+                  <h4 class="font-bold mb-2">E-commerce Backend</h4>
+                  <p>
+                    Django-based e-commerce platform with payment integration.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Programming Skill Content -->
-        <div id="programming-content" class="skill-detail-content hidden">
-          <h2 class="text-3xl font-bold mb-6 text-primary">
-            Programming Foundations
-          </h2>
-          <div class="space-y-4">
-            <p class="text-lg">
-              My programming skills focus on building efficient, optimized, and
-              well-structured code using fundamental principles.
-            </p>
+          <!-- AI & Data Skill Content -->
+          <div id="aidata-content" class="skill-detail-content hidden">
+            <h2 class="text-3xl font-bold mb-6 text-primary">AI & Data</h2>
+            <div class="space-y-4">
+              <p class="text-lg">
+                My AI and data skills focus on leveraging cutting-edge AI
+                technologies to create intelligent applications.
+              </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-              <div class="card bg-base-300 p-6">
-                <h3 class="text-xl font-bold mb-3">C & C++</h3>
-                <ul class="list-disc list-inside space-y-2">
-                  <li>Memory management</li>
-                  <li>Pointers & references</li>
-                  <li>Object-oriented programming</li>
-                  <li>Standard Template Library</li>
-                  <li>Low-level optimization</li>
-                </ul>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div class="card bg-base-300 p-6">
+                  <h3 class="text-xl font-bold mb-3">Generative AI</h3>
+                  <ul class="list-disc list-inside space-y-2">
+                    <li>Large Language Models (LLMs)</li>
+                    <li>Prompt engineering</li>
+                    <li>Fine-tuning techniques</li>
+                    <li>Context window optimization</li>
+                    <li>Multimodal models</li>
+                  </ul>
+                </div>
+
+                <div class="card bg-base-300 p-6">
+                  <h3 class="text-xl font-bold mb-3">Langchain & CrewAI</h3>
+                  <ul class="list-disc list-inside space-y-2">
+                    <li>LLM orchestration</li>
+                    <li>Chain of thought reasoning</li>
+                    <li>Agent systems design</li>
+                    <li>Tool integration</li>
+                    <li>Multi-agent collaboration</li>
+                  </ul>
+                </div>
+
+                <div class="card bg-base-300 p-6">
+                  <h3 class="text-xl font-bold mb-3">Agentic AI</h3>
+                  <ul class="list-disc list-inside space-y-2">
+                    <li>Autonomous agents</li>
+                    <li>Planning & reasoning systems</li>
+                    <li>Goal-oriented behavior</li>
+                    <li>Tool usage & integration</li>
+                    <li>Memory & knowledge management</li>
+                  </ul>
+                </div>
+
+                <div class="card bg-base-300 p-6">
+                  <h3 class="text-xl font-bold mb-3">RAG and Tool Calling</h3>
+                  <ul class="list-disc list-inside space-y-2">
+                    <li>Vector databases</li>
+                    <li>Semantic search</li>
+                    <li>Embedding models</li>
+                    <li>Knowledge retrieval pipelines</li>
+                    <li>Function calling frameworks</li>
+                  </ul>
+                </div>
               </div>
 
-              <div class="card bg-base-300 p-6">
-                <h3 class="text-xl font-bold mb-3">Data Structures</h3>
-                <ul class="list-disc list-inside space-y-2">
-                  <li>Arrays & linked lists</li>
-                  <li>Trees & graphs</li>
-                  <li>Hash tables</li>
-                  <li>Heaps & priority queues</li>
-                  <li>Custom data structure design</li>
-                </ul>
-              </div>
-
-              <div class="card bg-base-300 p-6">
-                <h3 class="text-xl font-bold mb-3">Problem Solving</h3>
-                <ul class="list-disc list-inside space-y-2">
-                  <li>Algorithmic thinking</li>
-                  <li>Complexity analysis</li>
-                  <li>Greedy algorithms</li>
-                  <li>Dynamic programming</li>
-                  <li>Divide and conquer</li>
-                </ul>
-              </div>
-
-              <div class="card bg-base-300 p-6">
-                <h3 class="text-xl font-bold mb-3">Code Optimization</h3>
-                <ul class="list-disc list-inside space-y-2">
-                  <li>Time & space complexity</li>
-                  <li>Profiling techniques</li>
-                  <li>Performance bottleneck identification</li>
-                  <li>Memory-efficient algorithms</li>
-                  <li>Benchmarking</li>
-                </ul>
+              <h3 class="text-2xl font-bold mt-8 mb-4">AI Projects</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="card bg-base-300 p-4">
+                  <h4 class="font-bold mb-2">Document Analysis System</h4>
+                  <p>
+                    RAG-based system for extracting insights from documents.
+                  </p>
+                </div>
+                <div class="card bg-base-300 p-4">
+                  <h4 class="font-bold mb-2">AI Research Assistant</h4>
+                  <p>Agentic system for automating research workflows.</p>
+                </div>
               </div>
             </div>
+          </div>
 
-            <h3 class="text-2xl font-bold mt-8 mb-4">Programming Projects</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="card bg-base-300 p-4">
-                <h4 class="font-bold mb-2">Algorithm Visualization Tool</h4>
-                <p>Interactive tool for visualizing common algorithms.</p>
+          <!-- Programming Skill Content -->
+          <div id="programming-content" class="skill-detail-content hidden">
+            <h2 class="text-3xl font-bold mb-6 text-primary">
+              Programming Foundations
+            </h2>
+            <div class="space-y-4">
+              <p class="text-lg">
+                My programming skills focus on building efficient, optimized,
+                and well-structured code using fundamental principles.
+              </p>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div class="card bg-base-300 p-6">
+                  <h3 class="text-xl font-bold mb-3">C & C++</h3>
+                  <ul class="list-disc list-inside space-y-2">
+                    <li>Memory management</li>
+                    <li>Pointers & references</li>
+                    <li>Object-oriented programming</li>
+                    <li>Standard Template Library</li>
+                    <li>Low-level optimization</li>
+                  </ul>
+                </div>
+
+                <div class="card bg-base-300 p-6">
+                  <h3 class="text-xl font-bold mb-3">Data Structures</h3>
+                  <ul class="list-disc list-inside space-y-2">
+                    <li>Arrays & linked lists</li>
+                    <li>Trees & graphs</li>
+                    <li>Hash tables</li>
+                    <li>Heaps & priority queues</li>
+                    <li>Custom data structure design</li>
+                  </ul>
+                </div>
+
+                <div class="card bg-base-300 p-6">
+                  <h3 class="text-xl font-bold mb-3">Problem Solving</h3>
+                  <ul class="list-disc list-inside space-y-2">
+                    <li>Algorithmic thinking</li>
+                    <li>Complexity analysis</li>
+                    <li>Greedy algorithms</li>
+                    <li>Dynamic programming</li>
+                    <li>Divide and conquer</li>
+                  </ul>
+                </div>
+
+                <div class="card bg-base-300 p-6">
+                  <h3 class="text-xl font-bold mb-3">Code Optimization</h3>
+                  <ul class="list-disc list-inside space-y-2">
+                    <li>Time & space complexity</li>
+                    <li>Profiling techniques</li>
+                    <li>Performance bottleneck identification</li>
+                    <li>Memory-efficient algorithms</li>
+                    <li>Benchmarking</li>
+                  </ul>
+                </div>
               </div>
-              <div class="card bg-base-300 p-4">
-                <h4 class="font-bold mb-2">Custom Data Structure Library</h4>
-                <p>
-                  Optimized implementations of common data structures in C++.
-                </p>
+
+              <h3 class="text-2xl font-bold mt-8 mb-4">Programming Projects</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="card bg-base-300 p-4">
+                  <h4 class="font-bold mb-2">Algorithm Visualization Tool</h4>
+                  <p>Interactive tool for visualizing common algorithms.</p>
+                </div>
+                <div class="card bg-base-300 p-4">
+                  <h4 class="font-bold mb-2">Custom Data Structure Library</h4>
+                  <p>
+                    Optimized implementations of common data structures in C++.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- JavaScript for Popup Functionality -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const skillCards = document.querySelectorAll(".skill-card");
-        const popupOverlay = document.getElementById("skill-popup-overlay");
-        const closePopupBtn = document.getElementById("close-popup");
-        const skillContents = document.querySelectorAll(
-          ".skill-detail-content"
-        );
-        const popupContent = document.getElementById("skill-popup-content");
+      <!-- JavaScript for Popup Functionality -->
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const skillCards = document.querySelectorAll(".skill-card");
+          const popupOverlay = document.getElementById("skill-popup-overlay");
+          const closePopupBtn = document.getElementById("close-popup");
+          const skillContents = document.querySelectorAll(
+            ".skill-detail-content"
+          );
+          const popupContent = document.getElementById("skill-popup-content");
 
-        // Function to open popup
-        function openPopup(skillType) {
-          // Hide all content sections first
-          skillContents.forEach((content) => {
-            content.classList.add("hidden");
-          });
+          // Function to open popup
+          function openPopup(skillType) {
+            // Hide all content sections first
+            skillContents.forEach((content) => {
+              content.classList.add("hidden");
+            });
 
-          // Show the specific content
-          const contentToShow = document.getElementById(`${skillType}-content`);
-          if (contentToShow) {
-            contentToShow.classList.remove("hidden");
-          }
+            // Show the specific content
+            const contentToShow = document.getElementById(
+              `${skillType}-content`
+            );
+            if (contentToShow) {
+              contentToShow.classList.remove("hidden");
+            }
 
-          // Show the overlay with animation
-          popupOverlay.classList.remove("hidden");
-          popupOverlay.classList.add("animate-fadeIn");
+            // Show the overlay with animation
+            popupOverlay.classList.remove("hidden");
+            popupOverlay.classList.add("animate-fadeIn");
 
-          // Apply entrance animation to the popup content
-          popupContent.classList.add("popup-entrance");
+            // Apply entrance animation to the popup content
+            popupContent.classList.add("popup-entrance");
 
-          // Disable scrolling on body
-          document.body.style.overflow = "hidden";
+            // Disable scrolling on body
+            document.body.style.overflow = "hidden";
 
-          // Remove animation class after animation completes
-          setTimeout(() => {
-            popupContent.classList.remove("popup-entrance");
-          }, 700);
-        }
-
-        // Function to close popup
-        function closePopup() {
-          popupOverlay.classList.add("animate-fadeOut");
-
-          // Add exit animation to the popup content
-          popupContent.classList.add("popup-exit");
-
-          // Wait for animation to complete before hiding
-          setTimeout(() => {
-            popupOverlay.classList.add("hidden");
-            popupOverlay.classList.remove("animate-fadeIn", "animate-fadeOut");
-            popupContent.classList.remove("popup-exit");
-
-            // Re-enable scrolling
-            document.body.style.overflow = "auto";
-          }, 500);
-        }
-
-        // Add click event to each skill card
-        skillCards.forEach((card) => {
-          card.addEventListener("click", () => {
-            const skillType = card.getAttribute("data-skill");
-            openPopup(skillType);
-          });
-        });
-
-        // Close popup when close button is clicked
-        closePopupBtn.addEventListener("click", closePopup);
-
-        // Close popup when clicking outside the content area
-        popupOverlay.addEventListener("click", (e) => {
-          if (e.target === popupOverlay) {
-            closePopup();
-          }
-        });
-
-        // Close with ESC key
-        document.addEventListener("keydown", (e) => {
-          if (
-            e.key === "Escape" &&
-            !popupOverlay.classList.contains("hidden")
-          ) {
-            closePopup();
-          }
-        });
-      });
-    </script>
-
-    <!-- Add this script to handle the card flip animation when clicked -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const skillCards = document.querySelectorAll(".skill-card");
-
-        skillCards.forEach((card) => {
-          card.addEventListener("click", function () {
-            this.classList.add("clicked");
-
-            // Remove the class after animation completes
+            // Remove animation class after animation completes
             setTimeout(() => {
-              this.classList.remove("clicked");
+              popupContent.classList.remove("popup-entrance");
             }, 700);
+          }
+
+          // Function to close popup
+          function closePopup() {
+            popupOverlay.classList.add("animate-fadeOut");
+
+            // Add exit animation to the popup content
+            popupContent.classList.add("popup-exit");
+
+            // Wait for animation to complete before hiding
+            setTimeout(() => {
+              popupOverlay.classList.add("hidden");
+              popupOverlay.classList.remove(
+                "animate-fadeIn",
+                "animate-fadeOut"
+              );
+              popupContent.classList.remove("popup-exit");
+
+              // Re-enable scrolling
+              document.body.style.overflow = "auto";
+            }, 500);
+          }
+
+          // Add click event to each skill card
+          skillCards.forEach((card) => {
+            card.addEventListener("click", () => {
+              const skillType = card.getAttribute("data-skill");
+              openPopup(skillType);
+            });
+          });
+
+          // Close popup when close button is clicked
+          closePopupBtn.addEventListener("click", closePopup);
+
+          // Close popup when clicking outside the content area
+          popupOverlay.addEventListener("click", (e) => {
+            if (e.target === popupOverlay) {
+              closePopup();
+            }
+          });
+
+          // Close with ESC key
+          document.addEventListener("keydown", (e) => {
+            if (
+              e.key === "Escape" &&
+              !popupOverlay.classList.contains("hidden")
+            ) {
+              closePopup();
+            }
           });
         });
+      </script>
 
-        // Optional: Add a staggered entrance animation for cards when page loads
-        setTimeout(() => {
-          skillCards.forEach((card, index) => {
-            setTimeout(() => {
-              card.style.animation =
-                "popupEnter 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards";
-              card.style.opacity = "1";
-            }, index * 150);
+      <!-- Add this script to handle the card flip animation when clicked -->
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const skillCards = document.querySelectorAll(".skill-card");
+
+          skillCards.forEach((card) => {
+            card.addEventListener("click", function () {
+              this.classList.add("clicked");
+
+              // Remove the class after animation completes
+              setTimeout(() => {
+                this.classList.remove("clicked");
+              }, 700);
+            });
           });
-        }, 300);
-      });
-    </script>
+
+          // Optional: Add a staggered entrance animation for cards when page loads
+          setTimeout(() => {
+            skillCards.forEach((card, index) => {
+              setTimeout(() => {
+                card.style.animation =
+                  "popupEnter 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards";
+                card.style.opacity = "1";
+              }, index * 150);
+            });
+          }, 300);
+        });
+      </script>
+    </div>
 
     <!-- Projects Section -->
-    <div
-      class="min-h-screen relative bg-base-200 overflow-hidden px-4 lg:px-8 pb-12"
-    >
+    <div>
       <div
-        class="w-full py-4 mt-8 text-center font-extrabold text-5xl underline underline-offset-4"
+        class="min-h-screen relative bg-base-200 overflow-hidden px-4 lg:px-8 pb-12"
+        id="projects_section_link"
       >
-        Projects
-      </div>
-      <div class="w-full">
         <div
-          class="w-full mt-8 grid grid-cols-1 lg:grid-cols-2 gap-4 lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1"
+          class="w-full py-4 mt-8 text-center font-extrabold text-5xl underline underline-offset-4"
         >
-          <div class="w-full items-center flex justify-end h-full py-2 lg:px-8">
-            <div class="relative lg:w-2/3 w-full">
-              <i
-                class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
-              ></i>
-              <input
-                id="project-search"
-                class="w-full p-2 pl-10 pr-4 rounded-lg bg-base-100/60 border-none focus:outline-none focus:ring-2 focus:ring-primary"
-                type="text"
-                placeholder="Search Projects"
-              />
-            </div>
-          </div>
-          <div class="w-full lg:ml-8 h-full py-2">
-            <ul
-              id="filter-buttons"
-              class="flex flex-wrap justify-start items-center gap-2"
-            >
-              <li
-                data-filter="all"
-                class="btn px-4 border border-base-content border-2 rounded-lg hover:bg-base-content hover:text-base-200 font-bold text-[1em] text-base-content active"
-              >
-                All
-              </li>
-              <li
-                data-filter="frontend"
-                class="btn px-4 border border-base-content border-2 rounded-lg hover:bg-base-content hover:text-base-200 font-bold text-[1em] text-base-content"
-              >
-                FrontEnd
-              </li>
-              <li
-                data-filter="backend"
-                class="btn px-4 border border-base-content border-2 rounded-lg hover:bg-base-content hover:text-base-200 font-bold text-[1em] text-base-content"
-              >
-                BackEnd
-              </li>
-              <li
-                data-filter="aiml"
-                class="btn px-4 border border-base-content border-2 rounded-lg hover:bg-base-content hover:text-base-200 font-bold text-[1em] text-base-content"
-              >
-                AI & ML
-              </li>
-              <li
-                data-filter="opensource"
-                class="btn px-4 border border-base-content border-2 rounded-lg hover:bg-base-content hover:text-base-200 font-bold text-[1em] text-base-content"
-              >
-                Open Source
-              </li>
-              <li
-                data-filter="fullstack"
-                class="btn px-4 border border-base-content border-2 rounded-lg hover:bg-base-content hover:text-base-200 font-bold text-[1em] text-base-content"
-              >
-                Full Stack
-              </li>
-            </ul>
-          </div>
+          Projects
         </div>
-        <div
-          id="projects-container"
-          class="h-full w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center items-start gap-6 mt-4 px-4 lg:px-8 py-4"
-        >
-          <!-- Project 1: AI-Powered RAG System -->
+        <div class="w-full">
           <div
-            class="project-card card group bg-base-100 border shadow-xl transform transition-transform hover:scale-105 hover:shadow-xl overflow-hidden relative"
-            data-categories="aiml backend"
+            class="w-full mt-8 grid grid-cols-1 lg:grid-cols-2 gap-4 lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1"
           >
-            <figure class="h-48 bg-base-300 relative">
-              <img
-                src="/api/placeholder/400/320"
-                class="object-cover w-full h-full"
-                alt="RAG System"
-              />
-              <!-- Hover Overlay Actions -->
-              <div
-                class="absolute inset-0 bg-black/50 flex justify-center items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity"
-              >
-                <a
-                  href="#"
-                  class="btn btn-sm btn-outline border-white text-white hover:bg-primary hover:border-primary"
-                >
-                  <i class="fa-solid fa-code mr-2"></i>View Code
-                </a>
-                <a
-                  href="#"
-                  class="btn btn-sm btn-outline border-white text-white hover:bg-primary hover:border-primary"
-                >
-                  <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i
-                  >Live Demo
-                </a>
+            <div
+              class="w-full items-center flex justify-end h-full py-2 lg:px-8"
+            >
+              <div class="relative lg:w-2/3 w-full">
+                <i
+                  class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
+                ></i>
+                <input
+                  id="project-search"
+                  class="w-full p-2 pl-10 pr-4 rounded-lg bg-base-100/60 border-none focus:outline-none focus:ring-2 focus:ring-primary"
+                  type="text"
+                  placeholder="Search Projects"
+                />
               </div>
-            </figure>
-
-            <div class="card-body">
-              <h3 class="card-title text-xl font-bold text-primary">
-                AI-Powered RAG System
-              </h3>
-              <p class="text-base-content mb-4">
-                Retrieval-Augmented Generation system that enhances AI responses
-                with contextually relevant information from custom knowledge
-                bases.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="badge badge-soft badge-success">Python</span>
-                <span class="badge badge-soft badge-success">Vector DB</span>
-                <span class="badge badge-soft badge-success"
-                  >LLM Integration</span
+            </div>
+            <div class="w-full lg:ml-8 h-full py-2">
+              <ul
+                id="filter-buttons"
+                class="flex flex-wrap justify-start items-center gap-2"
+              >
+                <li
+                  data-filter="all"
+                  class="btn px-4 border border-base-content border-2 rounded-lg hover:bg-base-content hover:text-base-200 font-bold text-[1em] text-base-content active"
                 >
-                <span class="badge badge-soft badge-success">REST API</span>
+                  All
+                </li>
+                <li
+                  data-filter="frontend"
+                  class="btn px-4 border border-base-content border-2 rounded-lg hover:bg-base-content hover:text-base-200 font-bold text-[1em] text-base-content"
+                >
+                  FrontEnd
+                </li>
+                <li
+                  data-filter="backend"
+                  class="btn px-4 border border-base-content border-2 rounded-lg hover:bg-base-content hover:text-base-200 font-bold text-[1em] text-base-content"
+                >
+                  BackEnd
+                </li>
+                <li
+                  data-filter="aiml"
+                  class="btn px-4 border border-base-content border-2 rounded-lg hover:bg-base-content hover:text-base-200 font-bold text-[1em] text-base-content"
+                >
+                  AI & ML
+                </li>
+                <li
+                  data-filter="opensource"
+                  class="btn px-4 border border-base-content border-2 rounded-lg hover:bg-base-content hover:text-base-200 font-bold text-[1em] text-base-content"
+                >
+                  Open Source
+                </li>
+                <li
+                  data-filter="fullstack"
+                  class="btn px-4 border border-base-content border-2 rounded-lg hover:bg-base-content hover:text-base-200 font-bold text-[1em] text-base-content"
+                >
+                  Full Stack
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            id="projects-container"
+            class="h-full w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center items-start gap-6 mt-4 px-4 lg:px-8 py-4"
+          >
+            <!-- Project 1: AI-Powered RAG System -->
+            <div
+              class="project-card card group bg-base-100 border shadow-xl transform transition-transform hover:scale-105 hover:shadow-xl overflow-hidden relative"
+              data-categories="aiml backend"
+            >
+              <figure class="h-48 bg-base-300 relative">
+                <img
+                  src="/api/placeholder/400/320"
+                  class="object-cover w-full h-full"
+                  alt="RAG System"
+                />
+                <!-- Hover Overlay Actions -->
+                <div
+                  class="absolute inset-0 bg-black/50 flex justify-center items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <a
+                    href="#"
+                    class="btn btn-sm btn-outline border-white text-white hover:bg-primary hover:border-primary"
+                  >
+                    <i class="fa-solid fa-code mr-2"></i>View Code
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-sm btn-outline border-white text-white hover:bg-primary hover:border-primary"
+                  >
+                    <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i
+                    >Live Demo
+                  </a>
+                </div>
+              </figure>
+
+              <div class="card-body">
+                <h3 class="card-title text-xl font-bold text-primary">
+                  AI-Powered RAG System
+                </h3>
+                <p class="text-base-content mb-4">
+                  Retrieval-Augmented Generation system that enhances AI
+                  responses with contextually relevant information from custom
+                  knowledge bases.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="badge badge-soft badge-success">Python</span>
+                  <span class="badge badge-soft badge-success">Vector DB</span>
+                  <span class="badge badge-soft badge-success"
+                    >LLM Integration</span
+                  >
+                  <span class="badge badge-soft badge-success">REST API</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Add the JavaScript for search and filtering functionality -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const searchInput = document.getElementById("project-search");
-        const filterButtons = document.querySelectorAll("#filter-buttons li");
-        const projectCards = document.querySelectorAll(".project-card");
+      <!-- Add the JavaScript for search and filtering functionality -->
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const searchInput = document.getElementById("project-search");
+          const filterButtons = document.querySelectorAll("#filter-buttons li");
+          const projectCards = document.querySelectorAll(".project-card");
 
-        // Apply active style to "All" button by default
-        const allButton = document.querySelector('[data-filter="all"]');
-        allButton.classList.add(
-          "active",
-          "bg-base-content",
-          "text-black",
-          "border-base-200"
-        );
+          // Apply active style to "All" button by default
+          const allButton = document.querySelector('[data-filter="all"]');
+          allButton.classList.add(
+            "active",
+            "bg-base-content",
+            "text-black",
+            "border-base-200"
+          );
 
-        // Set active filter button
-        filterButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            // Remove active class from all buttons
-            filterButtons.forEach((btn) => {
-              btn.classList.remove(
+          // Set active filter button
+          filterButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+              // Remove active class from all buttons
+              filterButtons.forEach((btn) => {
+                btn.classList.remove(
+                  "active",
+                  "bg-base-content",
+                  "text-black",
+                  "border-base-200"
+                );
+              });
+
+              // Add active class to clicked button
+              button.classList.add(
                 "active",
                 "bg-base-content",
                 "text-black",
                 "border-base-200"
               );
+
+              const filter = button.getAttribute("data-filter");
+
+              // Show/hide projects based on filter
+              filterProjects(filter);
             });
-
-            // Add active class to clicked button
-            button.classList.add(
-              "active",
-              "bg-base-content",
-              "text-black",
-              "border-base-200"
-            );
-
-            const filter = button.getAttribute("data-filter");
-
-            // Show/hide projects based on filter
-            filterProjects(filter);
           });
-        });
 
-        // Search functionality
-        searchInput.addEventListener("input", () => {
-          const searchTerm = searchInput.value.toLowerCase();
+          // Search functionality
+          searchInput.addEventListener("input", () => {
+            const searchTerm = searchInput.value.toLowerCase();
 
-          projectCards.forEach((card) => {
-            const title = card
-              .querySelector(".card-title")
-              .textContent.toLowerCase();
-            const description = card
-              .querySelector(".card-body p")
-              .textContent.toLowerCase();
-            const tags = Array.from(card.querySelectorAll(".badge")).map(
-              (tag) => tag.textContent.toLowerCase()
-            );
+            projectCards.forEach((card) => {
+              const title = card
+                .querySelector(".card-title")
+                .textContent.toLowerCase();
+              const description = card
+                .querySelector(".card-body p")
+                .textContent.toLowerCase();
+              const tags = Array.from(card.querySelectorAll(".badge")).map(
+                (tag) => tag.textContent.toLowerCase()
+              );
 
-            // Check if card matches search term
-            const matchesSearch =
-              title.includes(searchTerm) ||
-              description.includes(searchTerm) ||
-              tags.some((tag) => tag.includes(searchTerm));
+              // Check if card matches search term
+              const matchesSearch =
+                title.includes(searchTerm) ||
+                description.includes(searchTerm) ||
+                tags.some((tag) => tag.includes(searchTerm));
 
-            // Show/hide card based on search
-            if (matchesSearch) {
-              card.style.display = "block";
-            } else {
-              card.style.display = "none";
-            }
-          });
-        });
-
-        // Filter projects based on category
-        function filterProjects(filter) {
-          projectCards.forEach((card) => {
-            if (filter === "all") {
-              card.style.display = "block";
-            } else {
-              const categories = card
-                .getAttribute("data-categories")
-                .split(" ");
-              if (categories.includes(filter)) {
+              // Show/hide card based on search
+              if (matchesSearch) {
                 card.style.display = "block";
               } else {
                 card.style.display = "none";
               }
-            }
+            });
           });
-        }
-      });
-    </script>
+
+          // Filter projects based on category
+          function filterProjects(filter) {
+            projectCards.forEach((card) => {
+              if (filter === "all") {
+                card.style.display = "block";
+              } else {
+                const categories = card
+                  .getAttribute("data-categories")
+                  .split(" ");
+                if (categories.includes(filter)) {
+                  card.style.display = "block";
+                } else {
+                  card.style.display = "none";
+                }
+              }
+            });
+          }
+        });
+      </script>
+    </div>
 
     <!-- Contact Section -->
     <div
       class="min-h-screen relative bg-base-200 overflow-hidden flex items-center justify-center p-4 sm:p-8"
+      id="contact_section_link"
     >
       <!-- Advanced Animated Background -->
       <canvas class="animated-bg absolute inset-0 w-full h-full z-0"></canvas>
@@ -1237,119 +1282,149 @@
       </div>
     </div>
 
-    <!-- Hidden elements to extract theme colors -->
-    <div class="hidden">
-      <span id="color-primary" class="text-accent"></span>
-      <span id="color-accent" class="text-base"></span>
-      <span id="color-base" class="text-info-content"></span>
+    <!-- Background Canvas Design -->
+    <div>
+      <div class="hidden">
+        <span id="color-primary" class="text-accent"></span>
+        <span id="color-accent" class="text-base"></span>
+        <span id="color-base" class="text-info-content"></span>
+      </div>
+
+      <script>
+        const canvases = document.querySelectorAll("canvas.animated-bg");
+
+        function getThemeColors() {
+          const getColor = (id) =>
+            getComputedStyle(document.getElementById(id)).color;
+          return {
+            cross: getColor("color-primary"),
+            star: getColor("color-accent"),
+            diamond: getColor("color-base"),
+          };
+        }
+
+        canvases.forEach((canvas) => {
+          const ctx = canvas.getContext("2d");
+          let shapes = [];
+          let shapeColors = {};
+
+          function createGridShapes() {
+            shapes = [];
+            const size = 16;
+            const spacing = 48;
+            const width = canvas.width;
+            const height = canvas.height;
+
+            const cols = Math.ceil(width / spacing) + 1;
+            const rows = Math.ceil(height / spacing) + 1;
+
+            for (let y = 0; y < rows; y++) {
+              for (let x = 0; x < cols; x++) {
+                const offsetX = (y % 2) * (spacing / 2);
+                const shape = {
+                  x: x * spacing + offsetX,
+                  y: y * spacing,
+                  size: size,
+                  rotation: Math.random() * Math.PI,
+                  type: ["cross", "star", "diamond"][
+                    Math.floor(Math.random() * 3)
+                  ],
+                  direction: Math.random() < 0.5 ? 1 : -1,
+                };
+                shapes.push(shape);
+              }
+            }
+          }
+
+          function drawShape(shape) {
+            ctx.save();
+            ctx.translate(shape.x, shape.y);
+            ctx.rotate(shape.rotation);
+            ctx.strokeStyle = shapeColors[shape.type];
+            ctx.lineWidth = 1.2;
+
+            const s = shape.size / 2;
+            ctx.beginPath();
+
+            if (shape.type === "cross") {
+              ctx.moveTo(-s, 0);
+              ctx.lineTo(s, 0);
+              ctx.moveTo(0, -s);
+              ctx.lineTo(0, s);
+            } else if (shape.type === "star") {
+              for (let i = 0; i < 5; i++) {
+                const angle = (i * 2 * Math.PI) / 5;
+                const x = Math.cos(angle) * s;
+                const y = Math.sin(angle) * s;
+                ctx.lineTo(x, y);
+              }
+              ctx.closePath();
+            } else if (shape.type === "diamond") {
+              ctx.moveTo(0, -s);
+              ctx.lineTo(s, 0);
+              ctx.lineTo(0, s);
+              ctx.lineTo(-s, 0);
+              ctx.closePath();
+            }
+
+            ctx.stroke();
+            ctx.restore();
+          }
+
+          function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            shapes.forEach((shape) => {
+              shape.rotation += 0.01 * shape.direction;
+              if (shape.rotation > Math.PI || shape.rotation < -Math.PI) {
+                shape.direction *= -1;
+              }
+              drawShape(shape);
+            });
+            requestAnimationFrame(animate);
+          }
+
+          function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            shapeColors = getThemeColors();
+            createGridShapes();
+          }
+
+          window.addEventListener("resize", resizeCanvas);
+          window.addEventListener("DOMContentLoaded", () => {
+            resizeCanvas();
+            animate();
+          });
+        });
+      </script>
     </div>
 
-    <script>
-      const canvases = document.querySelectorAll("canvas.animated-bg");
+    <!-- Go to Top Button -->
+    <div>
+      <button
+        id="goTopBtn"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+        class="fixed bottom-6 right-6 btn lg:flex z-50 border-2 border-secondary text-secondary hover:bg-accent hover:text-accent-content"
+      >
+        <i class="fa-solid fa-arrow-up"></i> Go to Top
+      </button>
 
-      function getThemeColors() {
-        const getColor = (id) =>
-          getComputedStyle(document.getElementById(id)).color;
-        return {
-          cross: getColor("color-primary"),
-          star: getColor("color-accent"),
-          diamond: getColor("color-base"),
-        };
-      }
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const btn = document.getElementById("goTopBtn");
 
-      canvases.forEach((canvas) => {
-        const ctx = canvas.getContext("2d");
-        let shapes = [];
-        let shapeColors = {};
-
-        function createGridShapes() {
-          shapes = [];
-          const size = 16;
-          const spacing = 48;
-          const width = canvas.width;
-          const height = canvas.height;
-
-          const cols = Math.ceil(width / spacing) + 1;
-          const rows = Math.ceil(height / spacing) + 1;
-
-          for (let y = 0; y < rows; y++) {
-            for (let x = 0; x < cols; x++) {
-              const offsetX = (y % 2) * (spacing / 2);
-              const shape = {
-                x: x * spacing + offsetX,
-                y: y * spacing,
-                size: size,
-                rotation: Math.random() * Math.PI,
-                type: ["cross", "star", "diamond"][
-                  Math.floor(Math.random() * 3)
-                ],
-                direction: Math.random() < 0.5 ? 1 : -1,
-              };
-              shapes.push(shape);
+          function toggleButton() {
+            if (window.scrollY > 150) {
+              btn.classList.remove("hidden");
+            } else {
+              btn.classList.add("hidden");
             }
           }
-        }
 
-        function drawShape(shape) {
-          ctx.save();
-          ctx.translate(shape.x, shape.y);
-          ctx.rotate(shape.rotation);
-          ctx.strokeStyle = shapeColors[shape.type];
-          ctx.lineWidth = 1.2;
-
-          const s = shape.size / 2;
-          ctx.beginPath();
-
-          if (shape.type === "cross") {
-            ctx.moveTo(-s, 0);
-            ctx.lineTo(s, 0);
-            ctx.moveTo(0, -s);
-            ctx.lineTo(0, s);
-          } else if (shape.type === "star") {
-            for (let i = 0; i < 5; i++) {
-              const angle = (i * 2 * Math.PI) / 5;
-              const x = Math.cos(angle) * s;
-              const y = Math.sin(angle) * s;
-              ctx.lineTo(x, y);
-            }
-            ctx.closePath();
-          } else if (shape.type === "diamond") {
-            ctx.moveTo(0, -s);
-            ctx.lineTo(s, 0);
-            ctx.lineTo(0, s);
-            ctx.lineTo(-s, 0);
-            ctx.closePath();
-          }
-
-          ctx.stroke();
-          ctx.restore();
-        }
-
-        function animate() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          shapes.forEach((shape) => {
-            shape.rotation += 0.01 * shape.direction;
-            if (shape.rotation > Math.PI || shape.rotation < -Math.PI) {
-              shape.direction *= -1;
-            }
-            drawShape(shape);
-          });
-          requestAnimationFrame(animate);
-        }
-
-        function resizeCanvas() {
-          canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
-          shapeColors = getThemeColors();
-          createGridShapes();
-        }
-
-        window.addEventListener("resize", resizeCanvas);
-        window.addEventListener("DOMContentLoaded", () => {
-          resizeCanvas();
-          animate();
+          toggleButton(); // Run on load
+          window.addEventListener("scroll", toggleButton);
         });
-      });
-    </script>
+      </script>
+    </div>
   </body>
 </html>
