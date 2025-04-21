@@ -628,31 +628,48 @@
 
     <!-- Add this script to handle the card flip animation when clicked -->
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const skillCards = document.querySelectorAll(".skill-card");
+document.addEventListener("DOMContentLoaded", () => {
+  const skillCards = document.querySelectorAll(".skill-card");
 
-        skillCards.forEach((card) => {
-          card.addEventListener("click", function () {
-            this.classList.add("clicked");
+  // Click animation
+  skillCards.forEach((card) => {
+    card.addEventListener("click", function () {
+      this.classList.add("clicked");
+      setTimeout(() => {
+        this.classList.remove("clicked");
+      }, 700);
+    });
+  });
 
-            // Remove the class after animation completes
-            setTimeout(() => {
-              this.classList.remove("clicked");
-            }, 700);
-          });
-        });
+  // Intersection Observer for entrance animation
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          const card = entry.target;
 
-        // Optional: Add a staggered entrance animation for cards when page loads
-        setTimeout(() => {
-          skillCards.forEach((card, index) => {
-            setTimeout(() => {
-              card.style.animation =
-                "popupEnter 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards";
-              card.style.opacity = "1";
-            }, index * 150);
-          });
-        }, 300);
+          // Add stagger effect
+          setTimeout(() => {
+            card.style.animation =
+              "popupEnter 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards";
+            card.style.opacity = "1";
+          }, index * 150);
+
+          observer.unobserve(card); // Animate only once
+        }
       });
+    },
+    {
+      threshold: 0.2,
+    }
+  );
+
+  skillCards.forEach((card) => {
+    card.style.opacity = "0"; // Hide initially
+    observer.observe(card);
+  });
+});
+
     </script>
   </div>
 
@@ -890,7 +907,7 @@
                 <span class="text-sm sm:text-base break-all">github.com/asad-777</span>
               </a>
 
-              <!-- Instagram -->
+              <!-- Twitter -->
               <a href="https://x.com/_asad_777/"
                 class="flex items-center gap-3 p-4 rounded-lg border border-4 text-secondary hover:bg-secondary hover:text-secondary-content transition-all"
                 target="_blank">
@@ -898,6 +915,13 @@
                 <span class="text-sm sm:text-base break-all">x.com/_asad_777/</span>
               </a>
             </div>
+
+            <!-- Whatsapp -->
+              <a href="https://wa.me/qr/OVEDJ3OJHPUJA1"
+                class="flex items-center gap-3 p-4 mt-6 rounded-lg border border-4 text-secondary hover:bg-secondary hover:text-secondary-content transition-all">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span class="text-sm sm:text-base break-all">+92 (307) 9017268</span>
+              </a>
 
             <!-- Additional contact options -->
             <div class="mt-10 text-center">
@@ -1011,16 +1035,16 @@
 
 
       <div class="grid grid-flow-col gap-4">
-        <a href="" class="shadow-2xl hover:-translate-y-2 hover:text-secondary transition"><i
+        <a href="https://github.com/asad-777" class="shadow-2xl hover:-translate-y-2 hover:text-secondary transition"><i
             class="fa-brands fa-2xl px-2 fa-github"></i></a>
-        <a href="" class="shadow-2xl hover:-translate-y-2 hover:text-secondary transition"><i
+        <a href="https://x.com/_asad_777/" class="shadow-2xl hover:-translate-y-2 hover:text-secondary transition"><i
             class="fa-brands fa-2xl px-2 fa-twitter"></i></a>
         <a href="" class="shadow-2xl hover:-translate-y-2 hover:text-secondary transition"><i
             class="fa-brands fa-2xl px-2 fa-linkedin"></i></a>
-        <a href="" class="shadow-2xl hover:-translate-y-2 hover:text-secondary transition"><i
+        <a href="https://www.instagram.com/_asadamir_/" class="shadow-2xl hover:-translate-y-2 hover:text-secondary transition"><i
             class="fa-brands fa-2xl px-2 fa-instagram"></i></a>
-        <a href="" class="shadow-2xl hover:-translate-y-2 hover:text-secondary transition"><i
-            class="fa-brands fa-2xl px-2 fa-facebook"></i></a>
+        <a href="https://wa.me/qr/OVEDJ3OJHPUJA1" class="shadow-2xl hover:-translate-y-2 hover:text-secondary transition"><i
+            class="fa-brands fa-2xl px-2 fa-whatsapp"></i></a>
       </div>
       </nav>
       <aside>
