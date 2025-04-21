@@ -935,14 +935,15 @@
               class="text-primary">.</span></span>
         </h2>
 
-        <form class="space-y-5 mt-8 relative z-10">
+        <form class="space-y-5 mt-8 relative z-10"   action="https://formspree.io/f/mkgrwrbn"
+  method="POST">
           <!-- Name -->
           <div class="form-control w-full">
             <label class="label">
               <span class="label-text p-2 text-base-content/70 font-medium">Your Name</span>
             </label>
             <div class="relative">
-              <input type="text" placeholder="John Doe"
+              <input type="text" placeholder="John Doe" name="name"
                 class="input input-bordered w-full pl-10 bg-base-200 border-base-300 focus:border-secondary focus:ring focus:ring-secondary/20" />
             </div>
           </div>
@@ -953,7 +954,7 @@
               <span class="label-text p-2 text-base-content/70 font-medium">Your Email</span>
             </label>
             <div class="relative">
-              <input type="email" placeholder="your@email.com"
+              <input type="email" placeholder="your@email.com" name="email address"
                 class="input input-bordered w-full pl-10 bg-base-200 border-base-300 focus:border-secondary focus:ring focus:ring-secondary/20" />
             </div>
           </div>
@@ -964,7 +965,7 @@
               <span class="label-text p-2 text-base-content/70 font-medium">Subject</span>
             </label>
             <div class="relative">
-              <input type="text" placeholder="Project Subject"
+              <input type="text" placeholder="Project Subject" name="subject"
                 class="input input-bordered w-full pl-10 bg-base-200 border-base-300 focus:border-secondary focus:ring focus:ring-secondary/20" />
             </div>
           </div>
@@ -974,14 +975,14 @@
             <label class="label">
               <span class="label-text p-2 text-base-content/70 font-medium">Project Description</span>
             </label>
-            <textarea placeholder="Tell us more about your project requirements..." rows="4"
+            <textarea placeholder="Tell us more about your project requirements..." rows="4" name="subject"
               class="textarea textarea-bordered w-full bg-base-200 border-base-300 focus:border-secondary focus:ring focus:ring-secondary/20"></textarea>
           </div>
 
           <!-- Checkbox -->
           <div class="form-control">
             <label class="cursor-pointer label flex-wrap items-start gap-3">
-              <input type="checkbox" class="checkbox checkbox-secondary mt-1" />
+              <input type="checkbox" class="checkbox checkbox-secondary mt-1" required name="terms and condition" />
               <span class="label-text text-base-content/80">
                 I agree to the Terms and Privacy Policy
               </span>
