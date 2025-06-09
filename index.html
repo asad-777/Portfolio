@@ -24,15 +24,15 @@
 
 
 
-<body id="vanta-bg">
+<body id="vanta-bg" >
 <div></div>
   
   <!-- navbar -->
   <div class="fixed top-4 inset-x-0 z-50 px-4 py-2 lg:px-8 z-25">
     <div
-      class="navbar max-w-screen-xl mx-auto bg-base-100/60 backdrop-blur-md border border-secondary/30 rounded-xl shadow px-6 py-3">
+      class="navbar max-w-screen-xl mx-auto bg-accent-content/10 backdrop-blur-md border border-secondary rounded-xl shadow px-6 py-3">
       <div class="navbar-start">
-        <div class="dropdown ml-[-20px]">
+        <div class="dropdown ml-[-20px] backdrop-blur-md rounded rounded-xl">
           <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
@@ -40,7 +40,7 @@
             </svg>
           </div>
           <ul tabindex="0"
-            class="menu menu-sm dropdown-content bg-base-300 border transform translate-y-2 font-extrabold text-2xl text-secondary rounded-box z-1 mt-3 w-52 p-2 shadow">
+            class="menu menu-sm dropdown-content  bg-accent-content/10 border backdrop-blur-lg transform translate-y-2 font-extrabold text-2xl text-secondary rounded-box z-1 mt-3 w-52 p-2 shadow">
             <li class="p-2">
               <a class="px-2 py-4 4 nav-link-hover" href="#about_section_link">About</a>
             </li>
@@ -78,7 +78,7 @@
       </div>
       <div class="navbar-end">
         <a href="#contact_section_link"
-          class="px-4 py-2 border rounded-xl btn border-secondary mr-[-20px] lg:mr-0 text-secondary hover:bg-secondary hover:text-secondary-content"><span
+          class="px-4 py-2 border bg-accent-content/20 rounded-xl btn border-secondary mr-[-20px] lg:mr-0 text-secondary hover:bg-secondary hover:text-secondary-content"><span
             class="nav-link-hover font-bold">Lets Connect</span>
         </a>
       </div>
@@ -86,27 +86,26 @@
   </div>
   <!-- hero section -->
   <div class="hero min-h-screen  overflow-hidden z-24" id="hero">
-    <!-- Structured Diagonal Grid Background -->
-    
-
     <!-- Hero Content (unchanged) -->
-    <div class="hero-content px-4 py-2 flex-col items-center lg:flex-row-reverse relative z-10">
-      <div class="w-full h-[60px] lg:hidden"></div>
-      <img src="./images/Frame 1.png" class="max-w-sm rounded scale-100 w-full bg-base-300 rounded-full" />
-      <div class="text-center lg:text-left lg:ml-8 bg-base-300 p-4 border rounded-xl px-8">
-        <h1 class="text-4xl sm:text-5xl font-bold">Hi! I’m Muhammad Asad</h1>
-        <p class="py-6 text-sm sm:text-base">
-          Full Stack Developer with expertise in Python, Data Structures &
-          Algorithms, and advanced work in Generative and Agentic AI. I build
-          smart, scalable systems that perform.
-        </p>
-        <div class="w-full flex justify-center">
-          <a href="/public/resume.pdf" download
-            class="btn btn-wide border-2 transition border-secondary bg-base-300 shadow-xl text-secondary hover:bg-secondary hover:text-secondary-content font-bold">
-            <i class="fa-solid fa-download mr-2 fa-lg"></i> Download Resume
-          </a>
+    <div class="hero-content  px-4 py-2 flex-col items-center relative z-10">
+     <div>
+      <div class="top">
+        <div class="left">
+          <div class="left-1">Lahore/Pakistan</div>
+          <div class="left-2">Student Engineer</div>
+        </div>
+        <div class="right"></div>
+      </div>
+      <div class="center"></div>
+      <div class="bottom">
+        <div class="left"></div>
+        <div class="right">
+          <div class="right-1">github</div>
+          <div class="right-2">linkdin</div>
         </div>
       </div>
+     </div>
+
     </div>
   </div>
 
@@ -518,16 +517,15 @@
 
 <script>
 VANTA.FOG({
-  el: "#vanta-bg",
-  mouseControls: false,
-  touchControls: false,
-  gyroControls: false,
-  minHeight: 100.00,
-  minWidth: 100.00,
-  highlightColor: 0xb18e1d,
-  midtoneColor: 0xb33928,
-  lowlightColor: 0x5037c2,
-  blurFactor: 0.40
-})
+  el: "#vanta-bg", // Replace with your actual element
+  highlightColor: 0xbd93f9, // Purple
+  midtoneColor: 0x8be9fd,   // Cyan
+  lowlightColor: 0xff79c6,  // Pink
+  baseColor: 0x282a36,      // Background
+  blurFactor: 0.5,
+  speed: 1.5,
+  zoom: 1.0
+});
+
 </script>
 </html>
