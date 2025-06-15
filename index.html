@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="aqua"> 
+<html lang="en" data-theme="night"> 
 
 <head>
   <meta charset="UTF-8" />
@@ -14,9 +14,13 @@
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <!-- daisy ui stuff ends here -->
+<!-- devicon start here -->
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+<!-- devicon end here -->
+
   <!-- vanta js starts here -->
-  <script src="./three.r134.min.js"></script>
-  <script src="./vanta.fog.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
   <!-- vanta js ends here -->
 
 </head>
@@ -24,34 +28,34 @@
 
 
 
-<body id="vanta-bg" >
+<body id="vanta-b" >
 <div></div>
   
   <!-- navbar -->
   <div class="fixed top-4 inset-x-0 z-50 px-4 py-2 lg:px-8 z-25">
     <div
-      class="navbar max-w-screen-xl mx-auto bg-accent-content/10 backdrop-blur-md border border-primary rounded-xl shadow px-6 py-3">
+      class="navbar max-w-screen-xl mx-auto  backdrop-blur-md border border-primary rounded-xl shadow px-6 py-3">
       <div class="navbar-start">
         <div class="dropdown ml-[-20px] backdrop-blur-lg rounded rounded-xl">
-          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          <div tabindex="0" role="button" class="btn btn-primary ml-4 lg:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
           </div>
           <ul tabindex="0"
-            class="menu menu-sm dropdown-content border bg-[rgba(200,200,200,0.5)]  transform translate-y-2  text-primary rounded-box z-1 mt-3 w-52 p-2 shadow">
+            class="menu menu-sm dropdown-content border bg-primary-content  transform translate-y-2  text-primary rounded-box z-1 mt-3 w-52 p-2 ">
             <li class="p-2">
-              <a class="px-2 text-xl flex justify-center font-extrabold backdrop-blur-lg py-4 4 nav-link-hover" href="#about_section_link">About</a>
+              <a class="px-2 text-xl flex justify-center font-extrabold backdrop-blur-lg py-4 border nav-link-hover" href="#about_section_link">About</a>
             </li>
             <li class="p-2">
-              <a class="px-2 py-4 text-xl flex justify-center font-extrabold backdrop-blur-lg nav-link-hover" href="#skill_section_link">Skill Set</a>
+              <a class="px-2 py-4 text-xl flex justify-center font-extrabold backdrop-blur-lg border nav-link-hover" href="#skill_section_link">Skill Set</a>
             </li>
             <li class="p-2">
-              <a class="px-2 py-4 text-xl flex justify-center font-extrabold backdrop-blur-lg nav-link-hover" href="#projects_section_link">Projects</a>
+              <a class="px-2 py-4 text-xl flex justify-center font-extrabold backdrop-blur-lg border nav-link-hover" href="#projects_section_link">Projects</a>
             </li>
             <li class="p-2">
-              <a class="px-2 py-4 text-xl flex justify-center font-extrabold backdrop-blur-lg nav-link-hover" href="404.html">Blog</a>
+              <a class="px-2 py-4 text-xl flex justify-center font-extrabold backdrop-blur-lg border nav-link-hover" href="404.html">Blog</a>
             </li>
           </ul>
         </div>
@@ -76,8 +80,8 @@
           </li>
         </ul>
       </div>
-      <div class="navbar-end">
-        <a href="#contact_section_link"
+      <div class="navbar-end" >
+        <a href="#contact_section_link" 
           class="px-4 py-2 border bg-accent-content/20 rounded-xl btn border-primary mr-[-20px] lg:mr-0 text-primary hover:bg-primary hover:text-primary-content"><span
             class="nav-link-hover font-bold">Lets Connect</span>
         </a>
@@ -92,21 +96,138 @@
 
     <div class="p-4 flex justify-center">
       <ul class="grid items-center">
-      <li class="text-center text-4xl font-extrabold">M. Asad Amir</li>
+      <li class="text-center text-5xl font-extrabold">M. Asad Amir</li>
       <li class="text-center font-semibold mt-2 text-sm">I am a full stack software engineer with experties in ai and ml</li>
     </ul>
    </div>
    <div class="p-4 flex justify-center">
     <ul class="flex gap-2 jsutify-center items-center">
-      <li class="backdrop-blur-lg px-1.5 py-1 border rounded-lg font-bold text-center">Lahore, Pakistan</li>
-      <li class="backdrop-blur-lg px-1.5 py-1 border rounded-lg font-bold text-center">Student Developer</li>
-      <li><a class="backdrop-blur-lg px-2 py-2 border font-bold rounded-lg"><i class="fab fa-github text-xl"></i></a></li>
-      <li><a class="backdrop-blur-lg px-2 py-2 border font-bold rounded-lg"><i class="fab fa-linkedin text-xl"></i></a></li>
+      <li  class="px-1.5 py-1 border rounded-lg font-bold text-center ">Lahore, Pakistan</li>
+      <li  class="px-1.5 py-1 border rounded-lg font-bold text-center">Student Developer</li>
+      <li class="nav-link-hover py-4 "><a href="https://github.com/asad-777" class="backdrop-blur-lg px-2 py-2 border font-bold rounded-lg"><i class="fab fa-github fa-xl"></i></a></li>
+      <li class="nav-link-hover py-4 "><a href="#" class="backdrop-blur-lg px-2 py-2 border font-bold rounded-lg"><i class="fab fa-linkedin fa-xl"></i></a></li>
     </ul>
    </div>
 
   </div>
 </div>
+
+<!-- Skill Section -->
+<section id="skill_section_link" class="py-20 mb-8 pt-40">
+  <div class="w-full flex justify-center items-center  mb-8 pb-8 underline-offset-4 font-extrabold underline text-5xl">Skill Set</div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      
+      <!-- Skill Card -->
+      <div data-tilt data-tilt-glare data-tilt-max-glare="0.1" class="bg-base-content/10 backdrop-blur-lg border  rounded-2xl shadow-md hover:shadow-lg transition duration-300 p-5 flex items-center gap-4">
+        <div class="flex justify-center items-center rounded-xl w-14 h-14">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">Figma</h3>
+          <p class="text-sm">UI / UX Design</p>
+        </div>
+      </div>
+
+
+      <div data-tilt data-tilt-glare data-tilt-max-glare="0.1"
+  class="bg-base-content/10 backdrop-blur-lg border rounded-2xl shadow-md hover:shadow-lg transition duration-300 p-5 flex items-center gap-4"
+>
+  <div class="flex justify-center items-center rounded-xl w-14 h-14">
+    <i class="devicon-django-plain text-5xl"></i>
+  </div>
+  <div>
+    <h3 class="font-semibold text-lg">Django</h3>
+    <p class="text-sm">Python Full-Stack</p>
+  </div>
+</div>
+ 
+
+<div data-tilt data-tilt-glare data-tilt-max-glare="0.1"
+  class="bg-base-content/10 backdrop-blur-lg border rounded-2xl shadow-md hover:shadow-lg transition duration-300 p-5 flex items-center gap-4"
+>
+  <div class="flex justify-center items-center rounded-xl w-14 h-14">
+    <i class="devicon-tailwindcss-original colored text-5xl"></i>
+  </div>
+  <div>
+    <h3 class="font-semibold text-lg">Tailwind Css</h3>
+    <p class="text-sm">Css on Steroids</p>
+  </div>
+</div>
+
+
+<div data-tilt data-tilt-glare data-tilt-max-glare="0.1"
+  class="bg-base-content/10 backdrop-blur-lg border rounded-2xl shadow-md hover:shadow-lg transition duration-300 p-5 flex items-center gap-4"
+>
+  <div class="flex justify-center items-center rounded-xl w-14 h-14">
+    <i class="devicon-javascript-plain colored text-5xl"></i>
+  </div>
+  <div>
+    <h3 class="font-semibold text-lg">JavaScript</h3>
+    <p class="text-sm">Web Technology</p>
+  </div>
+</div>
+
+
+<div data-tilt data-tilt-glare data-tilt-max-glare="0.1"
+  class="bg-base-content/10 backdrop-blur-lg border rounded-2xl shadow-md hover:shadow-lg transition duration-300 p-5 flex items-center gap-4"
+>
+  <div class="flex justify-center items-center rounded-xl w-14 h-14">
+    <i class="devicon-postgresql-plain colored text-5xl"></i>
+  </div>
+  <div>
+    <h3 class="font-semibold text-lg">PostGreSQL</h3>
+    <p class="text-sm">Sql Databases</p>
+  </div>
+</div>
+
+
+<div data-tilt data-tilt-glare data-tilt-max-glare="0.1"
+  class="bg-base-content/10 backdrop-blur-lg border rounded-2xl shadow-md hover:shadow-lg transition duration-300 p-5 flex items-center gap-4"
+>
+  <div class="flex justify-center items-center rounded-xl w-14 h-14">
+    <i class="devicon-flask-original text-7xl"></i>
+  </div>
+  <div>
+    <h3 class="font-semibold text-lg">Flask</h3>
+    <p class="text-sm">Python/Web Dev</p>
+  </div>
+</div>
+
+
+<div data-tilt data-tilt-glare data-tilt-max-glare="0.1"
+  class="bg-base-content/10 backdrop-blur-lg border rounded-2xl shadow-md hover:shadow-lg transition duration-300 p-5 flex items-center gap-4"
+>
+  <div class="flex justify-center items-center rounded-xl w-14 h-14">
+    <i class="devicon-docker-plain colored text-5xl"></i>
+  </div>
+  <div>
+    <h3 class="font-semibold text-lg">Docker</h3>
+    <p class="text-sm">Container/Deployment</p>
+  </div>
+</div>
+
+
+<div data-tilt data-tilt-glare data-tilt-max-glare="0.1"
+  class="bg-base-content/10 backdrop-blur-lg border rounded-2xl shadow-md hover:shadow-lg transition duration-300 p-5 flex items-center gap-4"
+>
+  <div class="flex justify-center items-center rounded-xl w-14 h-14">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/yaml/yaml-original.svg" />
+  </div>
+  <div>
+    <h3 class="font-semibold text-lg">Yaml</h3>
+    <p class="text-sm">Agentic and Generative AI</p>
+  </div>
+</div>
+      <!-- Skill Card -->
+
+
+    </div>
+  </div>
+</section>
 
 
     
@@ -338,7 +459,7 @@
                 <span class="text-sm sm:text-base break-all">linkedin.com/in/your-username</span>
               </a>
 
-              <!-- GitHub -->
+              <!-- ubub -->
               <a href="https://github.com/asad-777"
                 class="flex items-center gap-3 p-4 rounded-lg border border-4 text-primary hover:bg-primary hover:text-primary-content transition-all"
                 target="_blank">
@@ -492,12 +613,16 @@
     </footer>
   </div>
 
+
+
+  <!-- vantajs background data -->
+  <div>
+  <!-- 
   <div id="color-1" class="bg-secondary opacity-0 pointer-events-none absolute"></div>
   <div id="color-2" class="bg-primary opacity-0 pointer-events-none absolute"></div>
   <div id="color-3" class="bg-accent opacity-0 pointer-events-none absolute"></div>
   <div id="color-4" class="bg-neutral opacity-0 pointer-events-none absolute"></div>
 
-</body>
 
 
 <script>
@@ -560,22 +685,28 @@ color4 = colourMaker("color-4")
 
 
 
-VANTA.FOG({
+VANTA.WAVES({
   el: "#vanta-bg",
-  highlightColor: color1,
-  midtoneColor: color2,
-  lowlightColor: color3,
-  baseColor: color4,
   mouseControls: false,
   touchControls: false,
   gyroControls: false,
   minHeight: 200.00,
   minWidth: 200.00,
-  blurFactor: 0.40,
-  speed: 1.00,
-  zoom: 1.00
+  scale: 1.00,
+  scaleMobile: 1.00,
+  color: color4,
+  shininess: 40.00,
+  waveHeight: 5.00,
+  waveSpeed: 0.40,
+  zoom: 1.0
 })
+</script> -->
+</div>
 </script>
 
-</script>
+ <!-- tilt js start here -->
+  <script type="text/javascript" src="vanilla-tilt.js"></script>
+ <!-- tilt js end here -->
+
+</body>
 </html>
