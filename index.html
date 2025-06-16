@@ -87,25 +87,49 @@
   </div>
   
 <!-- Hero Section -->
-<div id="hero-bg" class="hero  text-primary w-full min-h-screen flex justify-center px-8 md:px-16 overflow-hidden z-20" >
+<div id="hero-bg" class="hero text-primary w-full min-h-screen flex justify-center items-center px-8 md:px-16 overflow-hidden z-20">
   <!-- Main container -->
-  <div class="w-auto min-w-2/3    h-1/3 flex flex-col rounded-xl  bg-base-content/10 p-4 backdrop-blur-lg justify-around py-8">
-
-    <div class="p-4 flex justify-center">
-      <ul class="grid items-center">
-      <li class="text-center text-5xl font-extrabold">M. Asad Amir</li>
-      <li class="text-center font-semibold mt-2 text-sm">I am a full stack software engineer with experties in ai and ml</li>
-    </ul>
-   </div>
-   <div class="p-4 flex justify-center">
-    <ul class="flex gap-2 jsutify-center items-center">
-      <li  class="px-1.5 py-1 border rounded-lg font-bold text-center ">Lahore, Pakistan</li>
-      <li  class="px-1.5 py-1 border rounded-lg font-bold text-center">Student Developer</li>
-      <li class="nav-link-hover py-4 "><a href="https://github.com/asad-777" class="backdrop-blur-lg px-2 py-2 border font-bold rounded-lg"><i class="fab fa-github fa-xl"></i></a></li>
-      <li class="nav-link-hover py-4 "><a href="#" class="backdrop-blur-lg px-2 py-2 border font-bold rounded-lg"><i class="fab fa-linkedin fa-xl"></i></a></li>
-    </ul>
-   </div>
-
+  <div class="card w-full max-w-4xl  backdrop-blur-lg border border-base-content/20 shadow-2xl">
+    <div class="card-body items-center text-center space-y-8 py-12">
+      
+      <!-- Name and Title -->
+      <div class="space-y-4">
+        <h1 class="text-4xl md:text-6xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text ">
+          M. Asad Amir
+        </h1>
+        <div class="space-y-2">
+          <p class="text-lg md:text-xl font-bold text-base-content/90">
+            Full Stack Software Engineer
+          </p>
+          <p class="text-base text-base-content/70">
+            Specializing in AI & Machine Learning
+          </p>
+        </div>
+      </div>
+      
+      <!-- Tags -->
+      <div class="flex flex-wrap justify-center gap-3">
+        <div class="badge badge-lg badge-outline bg-base-100/20 backdrop-blur-sm border-base-content/30 text-base-content font-semibold px-4 py-3">
+          <i class="fas fa-map-marker-alt mr-2"></i>
+          Lahore, Pakistan
+        </div>
+        <div class="badge badge-lg badge-outline bg-base-100/20 backdrop-blur-sm border-base-content/30 text-base-content font-semibold px-4 py-3">
+          <i class="fas fa-code mr-2"></i>
+          Student Developer
+        </div>
+      </div>
+      
+      <!-- Social Links -->
+      <div class="flex gap-4">
+        <a href="https://github.com/asad-777" class="btn btn-circle btn-outline bg-base-100/20 nav-link-hover backdrop-blur-sm border-base-content/30  hover:border-primary hover:scale-110 transition-all duration-300">
+          <i class="fab fa-github text-xl"></i>
+        </a>
+        <a href="#" class="btn btn-circle btn-outline bg-base-100/20 backdrop-blur-sm nav-link-hover border-base-content/30  hover:border-primary hover:scale-110 transition-all duration-300">
+          <i class="fab fa-linkedin text-xl"></i>
+        </a>
+      </div>
+      
+    </div>
   </div>
 </div>
 
@@ -595,7 +619,9 @@ VANTA.WAVES({
   minWidth: 200.00,
   scale: 1.00,
   scaleMobile: 1.00,
-  color: 0x001e29
+  color: 0x001e29,
+    waveHeight: 13.50,
+  waveSpeed: 0.60
 })
 </script>
 </body>

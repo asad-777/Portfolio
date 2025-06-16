@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="night">
+<html lang="en" data-theme="abyss">
   <head>
     <link rel="icon" href="/images/Frame 1.png" />
     <link
@@ -21,6 +21,12 @@
       rel="stylesheet"
       type="text/css"
     />
+
+    <!-- vanta js starts here -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <!-- vanta js ends here -->
+
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
       rel="stylesheet"
@@ -29,7 +35,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
+  <body id="hero-bg">
     <div class="hero relative min-h-screen">
       <canvas class="animated-bg absolute inset-0 w-full h-full z-0"></canvas>
       <div class="hero-content text-center px-16">
@@ -47,118 +53,17 @@
         </div>
       </div>
     </div>
-    <!-- Hidden elements to extract theme colors -->
-    <div class="hidden">
-      <span id="color-primary" class="text-primary"></span>
-      <span id="color-accent" class="text-base"></span>
-      <span id="color-base" class="text-secondary"></span>
-    </div>
-
     <script>
-      const canvases = document.querySelectorAll("canvas.animated-bg");
-
-      function getThemeColors() {
-        const getColor = (id) =>
-          getComputedStyle(document.getElementById(id)).color;
-        return {
-          cross: getColor("color-primary"),
-          star: getColor("color-accent"),
-          diamond: getColor("color-base"),
-        };
-      }
-
-      canvases.forEach((canvas) => {
-        const ctx = canvas.getContext("2d");
-        let shapes = [];
-        let shapeColors = {};
-
-        function createGridShapes() {
-          shapes = [];
-          const size = 16;
-          const spacing = 48;
-          const width = canvas.width;
-          const height = canvas.height;
-
-          const cols = Math.ceil(width / spacing) + 1;
-          const rows = Math.ceil(height / spacing) + 1;
-
-          for (let y = 0; y < rows; y++) {
-            for (let x = 0; x < cols; x++) {
-              const offsetX = (y % 2) * (spacing / 2);
-              const shape = {
-                x: x * spacing + offsetX,
-                y: y * spacing,
-                size: size,
-                rotation: Math.random() * Math.PI,
-                type: ["cross", "star", "diamond"][
-                  Math.floor(Math.random() * 3)
-                ],
-                direction: Math.random() < 0.5 ? 1 : -1,
-              };
-              shapes.push(shape);
-            }
-          }
-        }
-
-        function drawShape(shape) {
-          ctx.save();
-          ctx.translate(shape.x, shape.y);
-          ctx.rotate(shape.rotation);
-          ctx.strokeStyle = shapeColors[shape.type];
-          ctx.lineWidth = 1.2;
-
-          const s = shape.size / 2;
-          ctx.beginPath();
-
-          if (shape.type === "cross") {
-            ctx.moveTo(-s, 0);
-            ctx.lineTo(s, 0);
-            ctx.moveTo(0, -s);
-            ctx.lineTo(0, s);
-          } else if (shape.type === "star") {
-            for (let i = 0; i < 5; i++) {
-              const angle = (i * 2 * Math.PI) / 5;
-              const x = Math.cos(angle) * s;
-              const y = Math.sin(angle) * s;
-              ctx.lineTo(x, y);
-            }
-            ctx.closePath();
-          } else if (shape.type === "diamond") {
-            ctx.moveTo(0, -s);
-            ctx.lineTo(s, 0);
-            ctx.lineTo(0, s);
-            ctx.lineTo(-s, 0);
-            ctx.closePath();
-          }
-
-          ctx.stroke();
-          ctx.restore();
-        }
-
-        function animate() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          shapes.forEach((shape) => {
-            shape.rotation += 0.01 * shape.direction;
-            if (shape.rotation > Math.PI || shape.rotation < -Math.PI) {
-              shape.direction *= -1;
-            }
-            drawShape(shape);
-          });
-          requestAnimationFrame(animate);
-        }
-
-        function resizeCanvas() {
-          canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
-          shapeColors = getThemeColors();
-          createGridShapes();
-        }
-
-        window.addEventListener("resize", resizeCanvas);
-        window.addEventListener("DOMContentLoaded", () => {
-          resizeCanvas();
-          animate();
-        });
+      VANTA.WAVES({
+        el: "#hero-bg",
+        mouseControls: false,
+        touchControls: false,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: 0x001e29,
       });
     </script>
   </body>
