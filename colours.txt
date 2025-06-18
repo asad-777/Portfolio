@@ -1,14 +1,14 @@
 Main colours
 
-base = 222831
-base-content = 31363F
-primary = 76ABAE
+base = 000000
+base-content = 333333
+primary = F2A07B
 primary-content = EEEEEE
 
 
 To change
 
-base = 222831
-base-content = 31363F
-primary = 76ABAE
-primary-content = EEEEEE
+base = 261C2C
+base-content = 3E2C41
+primary = 5C527F
+primary-content = 6E85B2
