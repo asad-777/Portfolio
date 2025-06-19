@@ -1,6 +1,6 @@
 Main colours
 
-base = 000000
+base = 222222
 base-content = 333333
 primary = F2A07B
 primary-content = EEEEEE
